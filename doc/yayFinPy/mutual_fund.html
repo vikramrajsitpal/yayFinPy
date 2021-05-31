@@ -1,0 +1,1331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>yayFinPy.mutual_fund API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>yayFinPy.mutual_fund</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# 
+# Part of academic course project at CMU in the course API Design and 
+# Implementation - 17780 by Josh Bloch and Charlie Garrod.
+# 
+# Authors:
+# - Shubham Gupta
+# - Vasudev Luthra
+
+import yfinance as yf
+import talib
+from .enumerations import *
+from .exceptions import *
+from datetime import date
+from decimal import *
+
+class MutualFund():
+
+    &#34;&#34;&#34;
+    A Yahoo Finance parser API for Mutual Funds.
+
+    This module covers the most important attributes of mutual funds such as:
+
+    Business summary,risk rating, yields, dividends, pe ratio , ytd return, holdings turnover, assets,
+    price, opening price, closing price, day high, day low, exchange, ticker symbol, quote type.
+    
+    Methods
+    -------
+
+    download(self, period, interval, start, end, threads)
+      downloads mutual fund data.
+    
+    historical_data(self)
+      returns historical data of mutual fund price.
+    
+    moving_average(self)
+      returns moving average of mutual fund price.
+
+    A typical application of this class first initialize an object with a valid ticker symbol, then use the
+        class properties to extract information.
+
+        Example usage:
+                
+    try:
+      mf = MutualFund(&#34;VFIAX&#34;)
+      # fetch price
+      price = mf.price
+
+      # business summary of mutual fund
+      summary = mf.business_summary()
+
+      # Moving average of mf price
+      moving_avg = mf.moving_average(duration=Duration.MONTH_1)
+
+    except:
+      print(&#34;Invalid Input Ticker&#34;)
+      
+    &#34;&#34;&#34;
+    def __init__(self, ticker):
+        &#34;&#34;&#34;
+        Parameters
+        ----------
+        ticker : str
+            The ticker symbol for a mutual fund security
+
+        Raises
+        ------
+        ParsingError
+          If data is not retrieved.
+        InputError
+          If the input ticker_symbol is not a valid Mutual Fund ticker
+        SecurityTypeError
+          If the Security type of the ticker is other than Mutual Fund, this error is raised.
+        &#34;&#34;&#34;
+
+        self.__security = None
+        try:
+            self.__security = yf.Ticker(ticker)
+        except:
+            raise ParsingError(ticker, &#34;Error in data retrieval.&#34;)
+
+        if len(self.__security.info) &lt;= 1:
+            raise InputError(ticker, &#34;Invalid Ticker Symbol.&#34;)
+
+        # ticker validation
+        if &#39;quoteType&#39; in self.__security.info.keys() and QuoteType(self.__security.info[&#39;quoteType&#39;]) == QuoteType(&#34;MUTUALFUND&#34;) :
+            self.__quote_type = QuoteType(self.__security.info[&#39;quoteType&#39;])
+        else:
+            raise SecurityTypeError(self.__ticker_symbol, &#34;Ticker Symbol does not match Mutual Fund type&#34;)
+            
+        try:
+            self.__ticker_symbol = self.__security.info[&#39;symbol&#39;]
+            self.__price = Decimal(self.__security.info[&#39;regularMarketPrice&#39;])
+            self.__close_price = Decimal(self.__security.info[&#39;regularMarketPreviousClose&#39;])
+            self.__exchange = self.__security.info[&#39;exchange&#39;]
+            self.__business_summary = self.__security.info[&#39;longBusinessSummary&#39;]
+            self.__expense_ratio = Decimal(self.__security.info[&#39;annualReportExpenseRatio&#39;])
+            self.__holdings_turnover = Decimal(self.__security.info[&#39;annualHoldingsTurnover&#39;])
+            self.__total_assets = Decimal(self.__security.info[&#39;totalAssets&#39;])
+            self.__overall_rating = Decimal(self.__security.info[&#39;morningStarOverallRating&#39;])
+            self.__risk_rating = Decimal(self.__security.info[&#39;morningStarRiskRating&#39;])
+            self.__yield = Decimal(self.__security.info[&#39;yield&#39;])
+            self.__ytd_return = Decimal(self.__security.info[&#39;ytdReturn&#39;])
+            self.__name = self.__security.info[&#39;shortName&#39;]
+        except:
+            raise YfinanceError(ticker, &#34;Missing underlying Yfinance data.&#34;)
+
+
+    def download(self, period:Duration = Duration.MONTH_1, 
+                interval: Interval = Interval.DAY_1, 
+                start:date = None, end:date = None, 
+                threads: bool = True):
+        &#34;&#34;&#34;
+        downloads price, volume data for a Mutual Fund.
+
+        Parameters
+        ----------
+        duration: Duration, optional
+            The duration for which the data is required (default is 1 month)
+        interval: Interval, optional
+            In what intervals should the data be reported (default is 1 day)
+        start: date, optional
+            The date from which the data is required (default is None)
+        end: date, optional
+            The date up to which the data is required (default is None)
+        threads: bool, optional
+            Should multiple threads be used to download the data (default is False)
+        &#34;&#34;&#34;
+        return self.__security.download(self, period, interval, start, end,
+                                        threads)
+
+    @property
+    def quote_type(self):
+        &#34;&#34;&#34;
+        returns the quote type of the security (mutual fund here). (Refer to QuoteType Enum).
+        &#34;&#34;&#34;
+        return self.__quote_type    
+    
+    @property
+    def name(self):
+        &#34;&#34;&#34;
+        Get the name of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the name of the mutual fund security.
+        &#34;&#34;&#34;
+        return self.__name
+
+    @property
+    def overall_rating(self):
+        &#34;&#34;&#34;
+        Get the overall rating of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the overall rating of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__overall_rating
+
+    
+    @property
+    def risk_rating(self):
+        &#34;&#34;&#34;
+        Get the risk rating of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the risk rating of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__risk_rating
+    
+    @property
+    def mf_yield(self):
+        &#34;&#34;&#34;
+        Get the yield of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the yield of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__yield
+
+    @property
+    def ytd_return(self):
+        &#34;&#34;&#34;
+        Get the ytd return of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the ytd return of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__ytd_return
+
+    @property
+    def total_assets(self):
+        &#34;&#34;&#34;
+        Get the total assets of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the total assets of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__total_assets
+
+    @property
+    def holdings_turnover(self):
+        &#34;&#34;&#34;
+        Get the holdings turnover of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the holdings turnover of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__holdings_turnover
+    
+    @property
+    def expense_ratio(self):
+        &#34;&#34;&#34;
+        Get the expense ratio of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the expense ratio of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__expense_ratio
+
+    @property
+    def business_summary(self):
+        &#34;&#34;&#34;
+        Get the business summary of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the business summary of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__business_summary
+    
+    @property
+    def ticker_symbol(self):
+        &#34;&#34;&#34;
+        Get the ticker symbol of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the ticker symbol of the mutual fund security.
+        &#34;&#34;&#34;
+        return self.__ticker_symbol
+
+    @property
+    def price(self):
+        &#34;&#34;&#34;
+        Get the current price of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the current price of the mutual fund security.
+        &#34;&#34;&#34;
+        return self.__price
+
+    @property
+    def closing_price(self):
+        &#34;&#34;&#34;
+        Get the closing price of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the closing price of the mutual fund security.
+        &#34;&#34;&#34;
+        return self.__close_price
+
+    @property
+    def exchange(self):
+        &#34;&#34;&#34;
+        Get the exchange of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the exchange of the mutual fund security.
+        &#34;&#34;&#34;
+        return self.__exchange
+
+    def historical_data(self, duration: Duration = Duration.MONTH_1, interval: Interval = Interval.DAY_1):
+        &#34;&#34;&#34;
+        returns price, volume data for a mutual fund.
+
+        Parameters
+        ----------
+        duration: Duration, optional
+            The duration for which the data is required (default is 1 month)
+        interval: Interval, optional
+            In what intervals should the data be reported (default is 1 day)
+        &#34;&#34;&#34;
+        return self.__security.history(period=duration.value, interval=interval.value)
+
+    def moving_average(self, duration: Duration = Duration.MONTH_1, timeperiod=7):
+        &#34;&#34;&#34;
+        returns moving average price for a mutual fund averaged on timeperiod for given duration.
+
+        Parameters
+        ----------
+        duration: Duration, optional
+            The duration for which the data is required (default is 1 month)
+        timeperiod: int, optional
+            Time period for which the data is averaged (default is 7 days)
+        &#34;&#34;&#34;
+        if timeperiod &lt; 2:
+            timeperiod = 2
+        if timeperiod &gt; 1000:
+            timeperiod = 1000
+        close = self.__security.history(period=duration.value)[&#39;Close&#39;]
+        return talib.SMA(close, timeperiod=timeperiod)
+
+    @property
+    def dividends(self):
+      &#34;&#34;&#34;
+      Returns dataframe of mutual fund security dividends.
+
+      Returns
+      -------
+      Pandas.DataFrame
+          dataframe of mutual fund security dividends
+      &#34;&#34;&#34;       
+      return self.__security.dividends</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="yayFinPy.mutual_fund.MutualFund"><code class="flex name class">
+<span>class <span class="ident">MutualFund</span></span>
+<span>(</span><span>ticker)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A Yahoo Finance parser API for Mutual Funds.</p>
+<p>This module covers the most important attributes of mutual funds such as:</p>
+<p>Business summary,risk rating, yields, dividends, pe ratio , ytd return, holdings turnover, assets,
+price, opening price, closing price, day high, day low, exchange, ticker symbol, quote type.</p>
+<h2 id="methods">Methods</h2>
+<p>download(self, period, interval, start, end, threads)
+downloads mutual fund data.</p>
+<p>historical_data(self)
+returns historical data of mutual fund price.</p>
+<p>moving_average(self)
+returns moving average of mutual fund price.</p>
+<p>A typical application of this class first initialize an object with a valid ticker symbol, then use the
+class properties to extract information.</p>
+<pre><code>Example usage:
+</code></pre>
+<p>try:
+mf = MutualFund("VFIAX")
+# fetch price
+price = mf.price</p>
+<p># business summary of mutual fund
+summary = mf.business_summary()</p>
+<p># Moving average of mf price
+moving_avg = mf.moving_average(duration=Duration.MONTH_1)</p>
+<p>except:
+print("Invalid Input Ticker")</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>ticker</code></strong> :&ensp;<code>str</code></dt>
+<dd>The ticker symbol for a mutual fund security</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ParsingError</code></dt>
+<dd>&nbsp;</dd>
+<dt>If data is not retrieved.</dt>
+<dt><code>InputError</code></dt>
+<dd>&nbsp;</dd>
+<dt>If the input ticker_symbol is not a valid Mutual Fund ticker</dt>
+<dt><code>SecurityTypeError</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>If the Security type of the ticker is other than Mutual Fund, this error is raised.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MutualFund():
+
+    &#34;&#34;&#34;
+    A Yahoo Finance parser API for Mutual Funds.
+
+    This module covers the most important attributes of mutual funds such as:
+
+    Business summary,risk rating, yields, dividends, pe ratio , ytd return, holdings turnover, assets,
+    price, opening price, closing price, day high, day low, exchange, ticker symbol, quote type.
+    
+    Methods
+    -------
+
+    download(self, period, interval, start, end, threads)
+      downloads mutual fund data.
+    
+    historical_data(self)
+      returns historical data of mutual fund price.
+    
+    moving_average(self)
+      returns moving average of mutual fund price.
+
+    A typical application of this class first initialize an object with a valid ticker symbol, then use the
+        class properties to extract information.
+
+        Example usage:
+                
+    try:
+      mf = MutualFund(&#34;VFIAX&#34;)
+      # fetch price
+      price = mf.price
+
+      # business summary of mutual fund
+      summary = mf.business_summary()
+
+      # Moving average of mf price
+      moving_avg = mf.moving_average(duration=Duration.MONTH_1)
+
+    except:
+      print(&#34;Invalid Input Ticker&#34;)
+      
+    &#34;&#34;&#34;
+    def __init__(self, ticker):
+        &#34;&#34;&#34;
+        Parameters
+        ----------
+        ticker : str
+            The ticker symbol for a mutual fund security
+
+        Raises
+        ------
+        ParsingError
+          If data is not retrieved.
+        InputError
+          If the input ticker_symbol is not a valid Mutual Fund ticker
+        SecurityTypeError
+          If the Security type of the ticker is other than Mutual Fund, this error is raised.
+        &#34;&#34;&#34;
+
+        self.__security = None
+        try:
+            self.__security = yf.Ticker(ticker)
+        except:
+            raise ParsingError(ticker, &#34;Error in data retrieval.&#34;)
+
+        if len(self.__security.info) &lt;= 1:
+            raise InputError(ticker, &#34;Invalid Ticker Symbol.&#34;)
+
+        # ticker validation
+        if &#39;quoteType&#39; in self.__security.info.keys() and QuoteType(self.__security.info[&#39;quoteType&#39;]) == QuoteType(&#34;MUTUALFUND&#34;) :
+            self.__quote_type = QuoteType(self.__security.info[&#39;quoteType&#39;])
+        else:
+            raise SecurityTypeError(self.__ticker_symbol, &#34;Ticker Symbol does not match Mutual Fund type&#34;)
+            
+        try:
+            self.__ticker_symbol = self.__security.info[&#39;symbol&#39;]
+            self.__price = Decimal(self.__security.info[&#39;regularMarketPrice&#39;])
+            self.__close_price = Decimal(self.__security.info[&#39;regularMarketPreviousClose&#39;])
+            self.__exchange = self.__security.info[&#39;exchange&#39;]
+            self.__business_summary = self.__security.info[&#39;longBusinessSummary&#39;]
+            self.__expense_ratio = Decimal(self.__security.info[&#39;annualReportExpenseRatio&#39;])
+            self.__holdings_turnover = Decimal(self.__security.info[&#39;annualHoldingsTurnover&#39;])
+            self.__total_assets = Decimal(self.__security.info[&#39;totalAssets&#39;])
+            self.__overall_rating = Decimal(self.__security.info[&#39;morningStarOverallRating&#39;])
+            self.__risk_rating = Decimal(self.__security.info[&#39;morningStarRiskRating&#39;])
+            self.__yield = Decimal(self.__security.info[&#39;yield&#39;])
+            self.__ytd_return = Decimal(self.__security.info[&#39;ytdReturn&#39;])
+            self.__name = self.__security.info[&#39;shortName&#39;]
+        except:
+            raise YfinanceError(ticker, &#34;Missing underlying Yfinance data.&#34;)
+
+
+    def download(self, period:Duration = Duration.MONTH_1, 
+                interval: Interval = Interval.DAY_1, 
+                start:date = None, end:date = None, 
+                threads: bool = True):
+        &#34;&#34;&#34;
+        downloads price, volume data for a Mutual Fund.
+
+        Parameters
+        ----------
+        duration: Duration, optional
+            The duration for which the data is required (default is 1 month)
+        interval: Interval, optional
+            In what intervals should the data be reported (default is 1 day)
+        start: date, optional
+            The date from which the data is required (default is None)
+        end: date, optional
+            The date up to which the data is required (default is None)
+        threads: bool, optional
+            Should multiple threads be used to download the data (default is False)
+        &#34;&#34;&#34;
+        return self.__security.download(self, period, interval, start, end,
+                                        threads)
+
+    @property
+    def quote_type(self):
+        &#34;&#34;&#34;
+        returns the quote type of the security (mutual fund here). (Refer to QuoteType Enum).
+        &#34;&#34;&#34;
+        return self.__quote_type    
+    
+    @property
+    def name(self):
+        &#34;&#34;&#34;
+        Get the name of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the name of the mutual fund security.
+        &#34;&#34;&#34;
+        return self.__name
+
+    @property
+    def overall_rating(self):
+        &#34;&#34;&#34;
+        Get the overall rating of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the overall rating of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__overall_rating
+
+    
+    @property
+    def risk_rating(self):
+        &#34;&#34;&#34;
+        Get the risk rating of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the risk rating of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__risk_rating
+    
+    @property
+    def mf_yield(self):
+        &#34;&#34;&#34;
+        Get the yield of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the yield of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__yield
+
+    @property
+    def ytd_return(self):
+        &#34;&#34;&#34;
+        Get the ytd return of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the ytd return of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__ytd_return
+
+    @property
+    def total_assets(self):
+        &#34;&#34;&#34;
+        Get the total assets of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the total assets of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__total_assets
+
+    @property
+    def holdings_turnover(self):
+        &#34;&#34;&#34;
+        Get the holdings turnover of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the holdings turnover of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__holdings_turnover
+    
+    @property
+    def expense_ratio(self):
+        &#34;&#34;&#34;
+        Get the expense ratio of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the expense ratio of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__expense_ratio
+
+    @property
+    def business_summary(self):
+        &#34;&#34;&#34;
+        Get the business summary of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the business summary of the mutual fund security.
+        &#34;&#34;&#34;
+
+        return self.__business_summary
+    
+    @property
+    def ticker_symbol(self):
+        &#34;&#34;&#34;
+        Get the ticker symbol of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the ticker symbol of the mutual fund security.
+        &#34;&#34;&#34;
+        return self.__ticker_symbol
+
+    @property
+    def price(self):
+        &#34;&#34;&#34;
+        Get the current price of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the current price of the mutual fund security.
+        &#34;&#34;&#34;
+        return self.__price
+
+    @property
+    def closing_price(self):
+        &#34;&#34;&#34;
+        Get the closing price of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the closing price of the mutual fund security.
+        &#34;&#34;&#34;
+        return self.__close_price
+
+    @property
+    def exchange(self):
+        &#34;&#34;&#34;
+        Get the exchange of the mutual fund security.
+        
+        Returns
+        -------
+        str
+          the exchange of the mutual fund security.
+        &#34;&#34;&#34;
+        return self.__exchange
+
+    def historical_data(self, duration: Duration = Duration.MONTH_1, interval: Interval = Interval.DAY_1):
+        &#34;&#34;&#34;
+        returns price, volume data for a mutual fund.
+
+        Parameters
+        ----------
+        duration: Duration, optional
+            The duration for which the data is required (default is 1 month)
+        interval: Interval, optional
+            In what intervals should the data be reported (default is 1 day)
+        &#34;&#34;&#34;
+        return self.__security.history(period=duration.value, interval=interval.value)
+
+    def moving_average(self, duration: Duration = Duration.MONTH_1, timeperiod=7):
+        &#34;&#34;&#34;
+        returns moving average price for a mutual fund averaged on timeperiod for given duration.
+
+        Parameters
+        ----------
+        duration: Duration, optional
+            The duration for which the data is required (default is 1 month)
+        timeperiod: int, optional
+            Time period for which the data is averaged (default is 7 days)
+        &#34;&#34;&#34;
+        if timeperiod &lt; 2:
+            timeperiod = 2
+        if timeperiod &gt; 1000:
+            timeperiod = 1000
+        close = self.__security.history(period=duration.value)[&#39;Close&#39;]
+        return talib.SMA(close, timeperiod=timeperiod)
+
+    @property
+    def dividends(self):
+      &#34;&#34;&#34;
+      Returns dataframe of mutual fund security dividends.
+
+      Returns
+      -------
+      Pandas.DataFrame
+          dataframe of mutual fund security dividends
+      &#34;&#34;&#34;       
+      return self.__security.dividends</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="yayFinPy.mutual_fund.MutualFund.business_summary"><code class="name">var <span class="ident">business_summary</span></code></dt>
+<dd>
+<div class="desc"><p>Get the business summary of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the business summary of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def business_summary(self):
+    &#34;&#34;&#34;
+    Get the business summary of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the business summary of the mutual fund security.
+    &#34;&#34;&#34;
+
+    return self.__business_summary</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.closing_price"><code class="name">var <span class="ident">closing_price</span></code></dt>
+<dd>
+<div class="desc"><p>Get the closing price of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the closing price of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def closing_price(self):
+    &#34;&#34;&#34;
+    Get the closing price of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the closing price of the mutual fund security.
+    &#34;&#34;&#34;
+    return self.__close_price</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.dividends"><code class="name">var <span class="ident">dividends</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of mutual fund security dividends.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of mutual fund security dividends</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def dividends(self):
+  &#34;&#34;&#34;
+  Returns dataframe of mutual fund security dividends.
+
+  Returns
+  -------
+  Pandas.DataFrame
+      dataframe of mutual fund security dividends
+  &#34;&#34;&#34;       
+  return self.__security.dividends</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.exchange"><code class="name">var <span class="ident">exchange</span></code></dt>
+<dd>
+<div class="desc"><p>Get the exchange of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the exchange of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def exchange(self):
+    &#34;&#34;&#34;
+    Get the exchange of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the exchange of the mutual fund security.
+    &#34;&#34;&#34;
+    return self.__exchange</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.expense_ratio"><code class="name">var <span class="ident">expense_ratio</span></code></dt>
+<dd>
+<div class="desc"><p>Get the expense ratio of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the expense ratio of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def expense_ratio(self):
+    &#34;&#34;&#34;
+    Get the expense ratio of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the expense ratio of the mutual fund security.
+    &#34;&#34;&#34;
+
+    return self.__expense_ratio</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.holdings_turnover"><code class="name">var <span class="ident">holdings_turnover</span></code></dt>
+<dd>
+<div class="desc"><p>Get the holdings turnover of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the holdings turnover of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def holdings_turnover(self):
+    &#34;&#34;&#34;
+    Get the holdings turnover of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the holdings turnover of the mutual fund security.
+    &#34;&#34;&#34;
+
+    return self.__holdings_turnover</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.mf_yield"><code class="name">var <span class="ident">mf_yield</span></code></dt>
+<dd>
+<div class="desc"><p>Get the yield of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the yield of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def mf_yield(self):
+    &#34;&#34;&#34;
+    Get the yield of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the yield of the mutual fund security.
+    &#34;&#34;&#34;
+
+    return self.__yield</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"><p>Get the name of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the name of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def name(self):
+    &#34;&#34;&#34;
+    Get the name of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the name of the mutual fund security.
+    &#34;&#34;&#34;
+    return self.__name</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.overall_rating"><code class="name">var <span class="ident">overall_rating</span></code></dt>
+<dd>
+<div class="desc"><p>Get the overall rating of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the overall rating of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def overall_rating(self):
+    &#34;&#34;&#34;
+    Get the overall rating of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the overall rating of the mutual fund security.
+    &#34;&#34;&#34;
+
+    return self.__overall_rating</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.price"><code class="name">var <span class="ident">price</span></code></dt>
+<dd>
+<div class="desc"><p>Get the current price of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the current price of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def price(self):
+    &#34;&#34;&#34;
+    Get the current price of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the current price of the mutual fund security.
+    &#34;&#34;&#34;
+    return self.__price</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.quote_type"><code class="name">var <span class="ident">quote_type</span></code></dt>
+<dd>
+<div class="desc"><p>returns the quote type of the security (mutual fund here). (Refer to QuoteType Enum).</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def quote_type(self):
+    &#34;&#34;&#34;
+    returns the quote type of the security (mutual fund here). (Refer to QuoteType Enum).
+    &#34;&#34;&#34;
+    return self.__quote_type    </code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.risk_rating"><code class="name">var <span class="ident">risk_rating</span></code></dt>
+<dd>
+<div class="desc"><p>Get the risk rating of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the risk rating of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def risk_rating(self):
+    &#34;&#34;&#34;
+    Get the risk rating of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the risk rating of the mutual fund security.
+    &#34;&#34;&#34;
+
+    return self.__risk_rating</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.ticker_symbol"><code class="name">var <span class="ident">ticker_symbol</span></code></dt>
+<dd>
+<div class="desc"><p>Get the ticker symbol of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the ticker symbol of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ticker_symbol(self):
+    &#34;&#34;&#34;
+    Get the ticker symbol of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the ticker symbol of the mutual fund security.
+    &#34;&#34;&#34;
+    return self.__ticker_symbol</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.total_assets"><code class="name">var <span class="ident">total_assets</span></code></dt>
+<dd>
+<div class="desc"><p>Get the total assets of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the total assets of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_assets(self):
+    &#34;&#34;&#34;
+    Get the total assets of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the total assets of the mutual fund security.
+    &#34;&#34;&#34;
+
+    return self.__total_assets</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.ytd_return"><code class="name">var <span class="ident">ytd_return</span></code></dt>
+<dd>
+<div class="desc"><p>Get the ytd return of the mutual fund security.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>the ytd return of the mutual fund security.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ytd_return(self):
+    &#34;&#34;&#34;
+    Get the ytd return of the mutual fund security.
+    
+    Returns
+    -------
+    str
+      the ytd return of the mutual fund security.
+    &#34;&#34;&#34;
+
+    return self.__ytd_return</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="yayFinPy.mutual_fund.MutualFund.download"><code class="name flex">
+<span>def <span class="ident">download</span></span>(<span>self, period: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, interval: <a title="yayFinPy.enumerations.Interval" href="enumerations.html#yayFinPy.enumerations.Interval">Interval</a> = Interval.DAY_1, start: datetime.date = None, end: datetime.date = None, threads: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>downloads price, volume data for a Mutual Fund.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>duration</code></strong> :&ensp;<code>Duration</code>, optional</dt>
+<dd>The duration for which the data is required (default is 1 month)</dd>
+<dt><strong><code>interval</code></strong> :&ensp;<code>Interval</code>, optional</dt>
+<dd>In what intervals should the data be reported (default is 1 day)</dd>
+<dt><strong><code>start</code></strong> :&ensp;<code>date</code>, optional</dt>
+<dd>The date from which the data is required (default is None)</dd>
+<dt><strong><code>end</code></strong> :&ensp;<code>date</code>, optional</dt>
+<dd>The date up to which the data is required (default is None)</dd>
+<dt><strong><code>threads</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Should multiple threads be used to download the data (default is False)</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def download(self, period:Duration = Duration.MONTH_1, 
+            interval: Interval = Interval.DAY_1, 
+            start:date = None, end:date = None, 
+            threads: bool = True):
+    &#34;&#34;&#34;
+    downloads price, volume data for a Mutual Fund.
+
+    Parameters
+    ----------
+    duration: Duration, optional
+        The duration for which the data is required (default is 1 month)
+    interval: Interval, optional
+        In what intervals should the data be reported (default is 1 day)
+    start: date, optional
+        The date from which the data is required (default is None)
+    end: date, optional
+        The date up to which the data is required (default is None)
+    threads: bool, optional
+        Should multiple threads be used to download the data (default is False)
+    &#34;&#34;&#34;
+    return self.__security.download(self, period, interval, start, end,
+                                    threads)</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.historical_data"><code class="name flex">
+<span>def <span class="ident">historical_data</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, interval: <a title="yayFinPy.enumerations.Interval" href="enumerations.html#yayFinPy.enumerations.Interval">Interval</a> = Interval.DAY_1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>returns price, volume data for a mutual fund.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>duration</code></strong> :&ensp;<code>Duration</code>, optional</dt>
+<dd>The duration for which the data is required (default is 1 month)</dd>
+<dt><strong><code>interval</code></strong> :&ensp;<code>Interval</code>, optional</dt>
+<dd>In what intervals should the data be reported (default is 1 day)</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def historical_data(self, duration: Duration = Duration.MONTH_1, interval: Interval = Interval.DAY_1):
+    &#34;&#34;&#34;
+    returns price, volume data for a mutual fund.
+
+    Parameters
+    ----------
+    duration: Duration, optional
+        The duration for which the data is required (default is 1 month)
+    interval: Interval, optional
+        In what intervals should the data be reported (default is 1 day)
+    &#34;&#34;&#34;
+    return self.__security.history(period=duration.value, interval=interval.value)</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.mutual_fund.MutualFund.moving_average"><code class="name flex">
+<span>def <span class="ident">moving_average</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>returns moving average price for a mutual fund averaged on timeperiod for given duration.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>duration</code></strong> :&ensp;<code>Duration</code>, optional</dt>
+<dd>The duration for which the data is required (default is 1 month)</dd>
+<dt><strong><code>timeperiod</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Time period for which the data is averaged (default is 7 days)</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def moving_average(self, duration: Duration = Duration.MONTH_1, timeperiod=7):
+    &#34;&#34;&#34;
+    returns moving average price for a mutual fund averaged on timeperiod for given duration.
+
+    Parameters
+    ----------
+    duration: Duration, optional
+        The duration for which the data is required (default is 1 month)
+    timeperiod: int, optional
+        Time period for which the data is averaged (default is 7 days)
+    &#34;&#34;&#34;
+    if timeperiod &lt; 2:
+        timeperiod = 2
+    if timeperiod &gt; 1000:
+        timeperiod = 1000
+    close = self.__security.history(period=duration.value)[&#39;Close&#39;]
+    return talib.SMA(close, timeperiod=timeperiod)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="yayFinPy" href="index.html">yayFinPy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="yayFinPy.mutual_fund.MutualFund" href="#yayFinPy.mutual_fund.MutualFund">MutualFund</a></code></h4>
+<ul class="two-column">
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.business_summary" href="#yayFinPy.mutual_fund.MutualFund.business_summary">business_summary</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.closing_price" href="#yayFinPy.mutual_fund.MutualFund.closing_price">closing_price</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.dividends" href="#yayFinPy.mutual_fund.MutualFund.dividends">dividends</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.download" href="#yayFinPy.mutual_fund.MutualFund.download">download</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.exchange" href="#yayFinPy.mutual_fund.MutualFund.exchange">exchange</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.expense_ratio" href="#yayFinPy.mutual_fund.MutualFund.expense_ratio">expense_ratio</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.historical_data" href="#yayFinPy.mutual_fund.MutualFund.historical_data">historical_data</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.holdings_turnover" href="#yayFinPy.mutual_fund.MutualFund.holdings_turnover">holdings_turnover</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.mf_yield" href="#yayFinPy.mutual_fund.MutualFund.mf_yield">mf_yield</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.moving_average" href="#yayFinPy.mutual_fund.MutualFund.moving_average">moving_average</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.name" href="#yayFinPy.mutual_fund.MutualFund.name">name</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.overall_rating" href="#yayFinPy.mutual_fund.MutualFund.overall_rating">overall_rating</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.price" href="#yayFinPy.mutual_fund.MutualFund.price">price</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.quote_type" href="#yayFinPy.mutual_fund.MutualFund.quote_type">quote_type</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.risk_rating" href="#yayFinPy.mutual_fund.MutualFund.risk_rating">risk_rating</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.ticker_symbol" href="#yayFinPy.mutual_fund.MutualFund.ticker_symbol">ticker_symbol</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.total_assets" href="#yayFinPy.mutual_fund.MutualFund.total_assets">total_assets</a></code></li>
+<li><code><a title="yayFinPy.mutual_fund.MutualFund.ytd_return" href="#yayFinPy.mutual_fund.MutualFund.ytd_return">ytd_return</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

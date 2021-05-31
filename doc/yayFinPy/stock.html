@@ -1,0 +1,2722 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>yayFinPy.stock API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>yayFinPy.stock</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# 
+# Part of academic course project at CMU in the course API Design and 
+# Implementation - 17780 by Josh Bloch and Charlie Garrod.
+# 
+# Authors:
+# - Shubham Gupta
+# - Vasudev Luthra
+
+from .base import _BaseSecurity
+import copy
+from .enumerations import *
+from .exceptions import *
+from decimal import *
+from googlesearch import search
+from datetime import date
+from sentifish import Sentiment
+import tweepy
+ 
+
+
+class CompanyData:
+    &#34;&#34;&#34;
+    Stores data about the Stock issuing company in a encapsulated class object.
+    &#34;&#34;&#34;
+    
+    def __init__(self,name,address,business_summary,logo_url,industry_sector,profits,country,website):
+        &#34;&#34;&#34;
+        Constructor for CompanyData class storing company details in a unified object.
+        &#34;&#34;&#34;
+        self.__name  = name
+        self.__address = address
+        self.__business_summary = business_summary
+        self.__logo_url = logo_url
+        self.__industry_sector = industry_sector
+        self.__profits = profits
+        self.__country = country
+        self.__website = website
+
+    @property
+    def name(self):
+        &#34;&#34;&#34;Returns company name
+
+        Returns
+        -------
+        str
+            company name
+        &#34;&#34;&#34;  
+        return self.__name
+
+    @property
+    def address(self):
+        &#34;&#34;&#34;Returns company location address
+
+        Returns
+        -------
+        str
+            company location address
+        &#34;&#34;&#34;  
+        return self.__address
+    
+    @property
+    def business_summary(self):
+        &#34;&#34;&#34;Returns company business summary
+
+        Returns
+        -------
+        str
+            company business summary
+        &#34;&#34;&#34;  
+        return self.__business_summary
+    
+    @property
+    def industry_sector(self):
+        &#34;&#34;&#34;Returns industry sector
+
+        Returns
+        -------
+        str
+            company industry sector
+        &#34;&#34;&#34;  
+        return self.__industry_sector
+    
+    @property
+    def profits(self):
+        &#34;&#34;&#34;Returns company annual profit figures
+
+        Returns
+        -------
+        Decimal
+            company anual profits
+        &#34;&#34;&#34;  
+        return Decimal(self.__profits)
+
+    @property
+    def country(self):
+        &#34;&#34;&#34;Returns company&#39;s home country
+
+        Returns
+        -------
+        str
+            company&#39;s home country
+        &#34;&#34;&#34;  
+        return self.__country
+    
+    @property
+    def wesbite(self):
+        &#34;&#34;&#34;Returns company website url
+
+        Returns
+        -------
+        str
+            company website url
+        &#34;&#34;&#34;        
+        return self.__website
+
+    @property
+    def logo_url(self):
+        &#34;&#34;&#34;Returns company logo url
+
+        Returns
+        -------
+        str
+            company logo url
+        &#34;&#34;&#34;
+        return self.__logo_url
+
+    def __str__(self):
+        &#34;&#34;&#34;Returns string representation of CompanyData
+
+        Returns
+        -------
+        str
+            string representation of CompanyData
+        &#34;&#34;&#34;
+        return &#34;Company Name: &#34;+self.__name \
+        +&#34;\naddress: &#34;+self.__address \
+        +&#34;\nsummary: &#34;+self.__business_summary \
+        +&#34;\nLogo Url: &#34;+self.__logo_url \
+        +&#34;\nCountry: &#34;+self.__country \
+        +&#34;\nwesbite: &#34;+self.__website \
+        +&#34;\nIndustry Sector: &#34;+self.__industry_sector \
+        +&#34;\nProfits: &#34;+str(self.__profits) + &#34;\n&#34;
+
+
+    
+class Stock(_BaseSecurity):
+    &#34;&#34;&#34;
+    A Yahoo Finance parser API for Stocks and Equity.
+
+        This module covers the most important attributes of stocks:
+        Company Data, stock splits, peg ratio, dividends, market cap, ask, ask size, bid, bid size, pe ratio , name;
+
+        And attributes common to all Securities:
+        price, opening price, closing price, volume, day high, day low, exchange, ticker symbol, quote type.
+
+        For more methods on the security, refer to ``base._BaseSecurity``
+
+        Methods
+        -------
+    related_news(self)
+                returns upto 20 top news links related to a stock.
+
+    tweets(self)
+                returns upto 20 top tweets related to a stock.
+
+    sentiment(self)
+                returns average sentiment score based on tweet data.
+
+    industry_recommendations(self)
+                Returns dataframe of mutualfund stock holders.
+
+        company_summary(self)
+                Returns company summary.
+    
+    returns(self,period,interval,start_date,end_date)
+        returns stock returns for a specific period and interval
+
+    returns_percentage(self,period,interval,start_date,end_date)
+        returns stock returns in percentage for specific period and interval
+
+
+    A typical application of this class first initialize an object with a valid ticker symbol, then use the
+        class properties to extract information.
+
+        Example usage:
+                
+        try:
+            stock_goog = Stock(&#34;GOOG&#34;)
+            # fetch price
+            price = stock_goog.price
+
+            # fetch market cap
+            stock_market_cap = stock_goog.market_cap
+
+            # get 1 year returns
+            returns = stock_goog.returns(period=Duration.YEAR_1)
+
+            # get related news links
+            news_list = stock_goog.related_news()
+            
+        except:
+            print(&#34;Invalid Input Ticker&#34;)
+    &#34;&#34;&#34;
+
+    def __init__(self,ticker_symbol):
+        &#34;&#34;&#34;
+        The constructor of the Stock class for initializing a Stock object.
+                
+                Parameters
+                ----------
+                ticker_symbol :str
+                        A valid ticker symbol for a Stock.
+                
+                Raises
+                ------
+                InputError
+                        if the input ticker_symbol is not a valid Stock ticker or data is not retrieved.
+                SecurityTypeError
+                        if the Security type of the ticker is other than Stock, this error is raised.
+        &#34;&#34;&#34;
+        
+        self.__ticker_symbol = ticker_symbol
+        super().__init__(self.__ticker_symbol)
+        try:
+            self.__security = self._BaseSecurity__security
+
+            s = self.__security.info
+            if &#39;quoteType&#39; in self.__security.info.keys() and QuoteType(self.__security.info[&#39;quoteType&#39;]) == QuoteType(&#34;EQUITY&#34;) :
+                self.__quote_type = QuoteType(self.__security.info[&#39;quoteType&#39;])
+            else:
+                raise SecurityTypeError(self.__ticker_symbol, &#34;Ticker Symbol does not match Stock security&#34;)
+            
+            self.__company_data = CompanyData(s[&#34;longName&#34;],s[&#34;address1&#34;],
+                                             s[&#34;longBusinessSummary&#34;],s[&#34;logo_url&#34;],
+                                             s[&#34;sector&#34;],s[&#34;profitMargins&#34;],s[&#34;country&#34;],
+                                             s[&#34;website&#34;])
+            
+            self.__stock_splits = self.__security.splits
+            self.__peg_ratio = Decimal(s[&#34;pegRatio&#34;])
+            self.__dividends = self.__security.dividends
+            self.__market_cap = Decimal(s[&#34;marketCap&#34;])
+            self.__ask = Decimal(s[&#34;ask&#34;])
+            self.__ask_size = Decimal(s[&#34;askSize&#34;])
+            self.__bid = Decimal(s[&#34;bid&#34;])
+            self.__bid_size = Decimal(s[&#34;bidSize&#34;])
+            self.__pe_ratio = Decimal(s[&#34;trailingPE&#34;])
+            self.__name = s[&#34;shortName&#34;]
+            self.__news = None
+            self.__tweets = None
+        except:
+            raise InputError(ticker_symbol,&#34;API data retrieval error&#34;)
+
+
+    @property
+    def name(self):
+        &#34;&#34;&#34;Returns name of company issuing stock.
+
+        Returns
+        -------
+        str
+            String name of Stock
+        &#34;&#34;&#34;
+        return self.__name
+
+    @property
+    def company_data(self):
+        &#34;&#34;&#34;Returns object providing company details.
+
+        Returns
+        -------
+        CompanyData
+            Object providing company details
+        &#34;&#34;&#34;
+        return copy.deepcopy(self.__company_data)
+
+    @property
+    def splits(self):
+      &#34;&#34;&#34;Returns dataframe of stock splits.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of stock splits
+        &#34;&#34;&#34;    
+      return copy.deepcopy(self.__stock_splits)
+
+    @property
+    def dividends(self):
+        &#34;&#34;&#34;Returns dataframe of security dividends.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of security dividends
+        &#34;&#34;&#34;    
+        return copy.deepcopy(self.__dividends)
+    
+
+    @property
+    def market_cap(self):
+        &#34;&#34;&#34;Returns market cap of company.
+
+        Returns
+        -------
+        Decimal
+            market cap of company.
+        &#34;&#34;&#34;
+        return self.__market_cap
+
+    @property
+    def peg_ratio(self):
+        &#34;&#34;&#34;Returns stock price earnings growth ratio.
+
+        Returns
+        -------
+        Decimal
+            Stock PEG ratio
+        &#34;&#34;&#34;   
+        return self.__peg_ratio
+
+    @property
+    def ask(self):
+        &#34;&#34;&#34;Returns ask price for Stock Object.
+
+        Returns
+        -------
+        Decimal
+            ask price for Stock Object
+        &#34;&#34;&#34;     
+        return self.__ask
+
+    @property
+    def ask_size(self):
+        &#34;&#34;&#34;Returns ask size for Stock.
+
+        Returns
+        -------
+        Decimal
+            ask size for Stock
+        &#34;&#34;&#34;      
+        return self.__ask_size
+
+    @property
+    def bid(self):
+        &#34;&#34;&#34;Returns bid price for Stock Object.
+
+        Returns
+        -------
+        Decimal
+            bid price for Stock Object
+        &#34;&#34;&#34;
+        return self.__bid
+
+    @property
+    def bid_size(self):
+        &#34;&#34;&#34;Returns bid size for Stock.
+
+        Returns
+        -------
+        Decimal
+            ask bid for Stock
+        &#34;&#34;&#34;      
+        return self.__bid_size
+
+    @property
+    def pe_ratio(self):
+        &#34;&#34;&#34;Returns price earnings ratio for Stock.
+
+        Returns
+        -------
+        Decimal
+            rice earnings ratio for Stock
+        &#34;&#34;&#34;       
+        return self.__pe_ratio
+
+    
+    def __calculate_returns(self,period:Duration = Duration.YEAR_1, 
+                interval: Interval = Interval.MONTH_1, percentage = False,
+                start:date = None, end:date = None): 
+        historic_data = self.historical_data(duration=period,interval=interval)
+        open_price = historic_data.iloc[0][&#34;Open&#34;]
+        close_price = historic_data.iloc[-1][&#34;Close&#34;]
+        total_return = close_price - open_price
+        for i,dividend in enumerate(historic_data[&#34;Dividends&#34;]):
+            if dividend &gt; 0:
+                total_return += dividend*((historic_data.iloc[i][&#34;Open&#34;]+historic_data.iloc[i][&#34;Close&#34;])/2)
+        if not percentage:
+            return total_return
+        else:
+            return (total_return/open_price) * 100
+
+    def returns(self,period:Duration = Duration.YEAR_1, 
+                interval: Interval = Interval.MONTH_1, 
+                start:date = None, end:date = None):
+        &#34;&#34;&#34;
+        Returns absolute Stock returns for period using specified interval.
+
+        Parameters
+        ----------
+        period : Duration, optional
+            Time period for returns, by default Duration.YEAR_1
+        interval : Interval, optional
+            Interval for return calculation, by default Interval.MONTH_1
+        start : date, optional
+            end date for return duration, by default None, use Duration
+        end : date, optional
+            end date for return duration, by default None, use Duration
+
+        Returns
+        -------
+        Decimal
+            absolute stock return amount.
+        &#34;&#34;&#34;
+        return Decimal(self.__calculate_returns(period,interval,False,start,end))
+
+    def returns_percentage(self,period:Duration = Duration.YEAR_1, 
+                interval: Interval = Interval.MONTH_1,
+                start:date = None, end:date = None):
+        &#34;&#34;&#34;
+        Returns percentage Stock returns for period using specified interval.
+
+        Parameters
+        ----------
+        period : Duration, optional
+            Time period for returns, by default Duration.YEAR_1
+        interval : Interval, optional
+            Interval for return calculation, by default Interval.MONTH_1
+        start : date, optional
+            end date for return duration, by default None, use Duration
+        end : date, optional
+            end date for return duration, by default None, use Duration
+
+        Returns
+        -------
+        Decimal
+            percentage return of a stock.
+        &#34;&#34;&#34;    
+        return Decimal(self.__calculate_returns(period,interval,True,start,end))
+
+    
+    def company_summary(self):
+        &#34;&#34;&#34;Prints company data summary.
+        &#34;&#34;&#34;
+        print(self.company_data)
+    
+
+    def sentiment(self):
+        &#34;&#34;&#34;Returns average Sentiment Score of top 20 tweets.
+
+        Returns
+        -------
+        Decimal
+            Sentiment score from 0 to 1. with 1 being most positive and 0 least.
+
+        Raises
+        ------
+        TwitterError
+            Riased when error in calling twitter API.
+        &#34;&#34;&#34;
+        if self.__tweets is None:
+            raise TwitterError(self.__ticker_symbol ,&#34; Error getting twitter data.&#34;)
+
+        if len(self.__tweets) == 0:
+            raise TwitterError(self.__ticker_symbol ,&#34; Error getting twitter data.&#34;)
+        sentiments = []
+        for t in self.__tweets:
+            obj = Sentiment(t)
+            sentiments.append(obj.analyze())
+        return Decimal(sum(sentiments)/len(sentiments))
+
+    
+
+    def industry_recommendations(self):
+        &#34;&#34;&#34;Returns dataframe of industry recommendations.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of industry recommendations
+        &#34;&#34;&#34;  
+        return self.__security.recommendations
+    
+
+    def tweets(self,consumer_key, consumer_secret, access_token,access_token_secret):
+        &#34;&#34;&#34;[summary]
+
+        Parameters
+        ----------
+        consumer_key : str
+            twitter API consumer key
+        consumer_secret : str
+             twitter API consumer Secret
+        access_token : str
+             twitter API access token
+        access_token_secret : str
+             twitter API access token secret
+
+        Returns
+        -------
+        list[str]
+            list of upto 20 tweets from twitter for Stock symbol.
+
+        Raises
+        ------
+        TwitterError
+            Riased when error in calling or authenticating twitter API.
+        &#34;&#34;&#34;
+        if self.__tweets is None:
+            self.__tweets = []
+            # Authenticate to Twitter
+            try:
+                auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+                auth.set_access_token(access_token, access_token_secret)
+
+                # Create API object
+                api = tweepy.API(auth, wait_on_rate_limit=True,
+                    wait_on_rate_limit_notify=True)
+                for tweet in api.search(q=&#34;$TSLA&#34;, lang=&#34;en&#34;, rpp=20):
+                    self.__tweets.append(tweet.text)
+            except:
+                raise TwitterError(self.__ticker_symbol ,&#34; Error getting twitter data. Check API keys.&#34;)
+        return self.__tweets
+    
+    def related_news(self):
+        &#34;&#34;&#34;Returns a list of links to news items related to the Stock.
+
+        Returns
+        -------
+        list[str]
+            list of links to news items related to the Stock.
+
+        Raises
+        ------
+        NewsError
+            Raised when error occurs in getting news links.
+        &#34;&#34;&#34;
+        news_list = []
+        for news_article in search(self.__ticker_symbol, tld=&#34;com&#34;, num=20, stop=20, pause=2):
+            news_list.append(news_article)
+
+        if len(news_list) == 0:
+                raise NewsError(self.__ticker_symbol ,&#34; Error getting related news.&#34;)
+
+        return news_list
+
+    @property
+    def financials(self):
+        &#34;&#34;&#34;Returns dataframe of stock financials.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of stock financials
+        &#34;&#34;&#34;  
+        return self.__security.financials
+
+    @property
+    def calendar(self):
+        &#34;&#34;&#34;Returns dataframe of stock Calendar.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of stock Calendar
+        &#34;&#34;&#34;     
+        return self.__security.calendar
+
+    @property
+    def cashflow(self):
+        &#34;&#34;&#34;Returns dataframe of cashflow.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of cashflow
+        &#34;&#34;&#34;     
+        return self.__security.cashflow
+
+    @property
+    def earnings(self):
+        &#34;&#34;&#34;Returns dataframe of earnings.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of earnings
+        &#34;&#34;&#34;      
+        return self.__security.earnings
+
+
+    @property
+    def major_holders(self):
+        &#34;&#34;&#34;Returns dataframe of major stock holders.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of major stock holders
+        &#34;&#34;&#34;    
+        return self.__security.major_holders
+
+    @property   
+    def actions(self):
+        &#34;&#34;&#34;Returns dataframe of splits and dividends.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of splits and dividends
+        &#34;&#34;&#34;      
+        return self.__security.actions
+
+    @property   
+    def balance_sheet(self):
+        &#34;&#34;&#34;Returns dataframe containing balance sheet.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of containing balance sheet
+        &#34;&#34;&#34;    
+        return self.__security.balance_sheet
+
+    @property
+    def institutional_holders(self):
+        &#34;&#34;&#34;Returns dataframe of institutional stock holders.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of institutional stock holders
+        &#34;&#34;&#34;      
+        return self.__security.institutional_holders
+
+    @property
+    def mutualfund_holders(self):
+        &#34;&#34;&#34;Returns dataframe of mutualfund stock holders.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of mutualfund stock holders
+        &#34;&#34;&#34;    
+        return self.__security.mutualfund_holders</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="yayFinPy.stock.CompanyData"><code class="flex name class">
+<span>class <span class="ident">CompanyData</span></span>
+<span>(</span><span>name, address, business_summary, logo_url, industry_sector, profits, country, website)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Stores data about the Stock issuing company in a encapsulated class object.</p>
+<p>Constructor for CompanyData class storing company details in a unified object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CompanyData:
+    &#34;&#34;&#34;
+    Stores data about the Stock issuing company in a encapsulated class object.
+    &#34;&#34;&#34;
+    
+    def __init__(self,name,address,business_summary,logo_url,industry_sector,profits,country,website):
+        &#34;&#34;&#34;
+        Constructor for CompanyData class storing company details in a unified object.
+        &#34;&#34;&#34;
+        self.__name  = name
+        self.__address = address
+        self.__business_summary = business_summary
+        self.__logo_url = logo_url
+        self.__industry_sector = industry_sector
+        self.__profits = profits
+        self.__country = country
+        self.__website = website
+
+    @property
+    def name(self):
+        &#34;&#34;&#34;Returns company name
+
+        Returns
+        -------
+        str
+            company name
+        &#34;&#34;&#34;  
+        return self.__name
+
+    @property
+    def address(self):
+        &#34;&#34;&#34;Returns company location address
+
+        Returns
+        -------
+        str
+            company location address
+        &#34;&#34;&#34;  
+        return self.__address
+    
+    @property
+    def business_summary(self):
+        &#34;&#34;&#34;Returns company business summary
+
+        Returns
+        -------
+        str
+            company business summary
+        &#34;&#34;&#34;  
+        return self.__business_summary
+    
+    @property
+    def industry_sector(self):
+        &#34;&#34;&#34;Returns industry sector
+
+        Returns
+        -------
+        str
+            company industry sector
+        &#34;&#34;&#34;  
+        return self.__industry_sector
+    
+    @property
+    def profits(self):
+        &#34;&#34;&#34;Returns company annual profit figures
+
+        Returns
+        -------
+        Decimal
+            company anual profits
+        &#34;&#34;&#34;  
+        return Decimal(self.__profits)
+
+    @property
+    def country(self):
+        &#34;&#34;&#34;Returns company&#39;s home country
+
+        Returns
+        -------
+        str
+            company&#39;s home country
+        &#34;&#34;&#34;  
+        return self.__country
+    
+    @property
+    def wesbite(self):
+        &#34;&#34;&#34;Returns company website url
+
+        Returns
+        -------
+        str
+            company website url
+        &#34;&#34;&#34;        
+        return self.__website
+
+    @property
+    def logo_url(self):
+        &#34;&#34;&#34;Returns company logo url
+
+        Returns
+        -------
+        str
+            company logo url
+        &#34;&#34;&#34;
+        return self.__logo_url
+
+    def __str__(self):
+        &#34;&#34;&#34;Returns string representation of CompanyData
+
+        Returns
+        -------
+        str
+            string representation of CompanyData
+        &#34;&#34;&#34;
+        return &#34;Company Name: &#34;+self.__name \
+        +&#34;\naddress: &#34;+self.__address \
+        +&#34;\nsummary: &#34;+self.__business_summary \
+        +&#34;\nLogo Url: &#34;+self.__logo_url \
+        +&#34;\nCountry: &#34;+self.__country \
+        +&#34;\nwesbite: &#34;+self.__website \
+        +&#34;\nIndustry Sector: &#34;+self.__industry_sector \
+        +&#34;\nProfits: &#34;+str(self.__profits) + &#34;\n&#34;</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="yayFinPy.stock.CompanyData.address"><code class="name">var <span class="ident">address</span></code></dt>
+<dd>
+<div class="desc"><p>Returns company location address</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>company location address</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def address(self):
+    &#34;&#34;&#34;Returns company location address
+
+    Returns
+    -------
+    str
+        company location address
+    &#34;&#34;&#34;  
+    return self.__address</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.CompanyData.business_summary"><code class="name">var <span class="ident">business_summary</span></code></dt>
+<dd>
+<div class="desc"><p>Returns company business summary</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>company business summary</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def business_summary(self):
+    &#34;&#34;&#34;Returns company business summary
+
+    Returns
+    -------
+    str
+        company business summary
+    &#34;&#34;&#34;  
+    return self.__business_summary</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.CompanyData.country"><code class="name">var <span class="ident">country</span></code></dt>
+<dd>
+<div class="desc"><p>Returns company's home country</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>company's home country</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def country(self):
+    &#34;&#34;&#34;Returns company&#39;s home country
+
+    Returns
+    -------
+    str
+        company&#39;s home country
+    &#34;&#34;&#34;  
+    return self.__country</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.CompanyData.industry_sector"><code class="name">var <span class="ident">industry_sector</span></code></dt>
+<dd>
+<div class="desc"><p>Returns industry sector</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>company industry sector</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def industry_sector(self):
+    &#34;&#34;&#34;Returns industry sector
+
+    Returns
+    -------
+    str
+        company industry sector
+    &#34;&#34;&#34;  
+    return self.__industry_sector</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.CompanyData.logo_url"><code class="name">var <span class="ident">logo_url</span></code></dt>
+<dd>
+<div class="desc"><p>Returns company logo url</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>company logo url</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def logo_url(self):
+    &#34;&#34;&#34;Returns company logo url
+
+    Returns
+    -------
+    str
+        company logo url
+    &#34;&#34;&#34;
+    return self.__logo_url</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.CompanyData.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"><p>Returns company name</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>company name</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def name(self):
+    &#34;&#34;&#34;Returns company name
+
+    Returns
+    -------
+    str
+        company name
+    &#34;&#34;&#34;  
+    return self.__name</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.CompanyData.profits"><code class="name">var <span class="ident">profits</span></code></dt>
+<dd>
+<div class="desc"><p>Returns company annual profit figures</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>company anual profits</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def profits(self):
+    &#34;&#34;&#34;Returns company annual profit figures
+
+    Returns
+    -------
+    Decimal
+        company anual profits
+    &#34;&#34;&#34;  
+    return Decimal(self.__profits)</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.CompanyData.wesbite"><code class="name">var <span class="ident">wesbite</span></code></dt>
+<dd>
+<div class="desc"><p>Returns company website url</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>company website url</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def wesbite(self):
+    &#34;&#34;&#34;Returns company website url
+
+    Returns
+    -------
+    str
+        company website url
+    &#34;&#34;&#34;        
+    return self.__website</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="yayFinPy.stock.Stock"><code class="flex name class">
+<span>class <span class="ident">Stock</span></span>
+<span>(</span><span>ticker_symbol)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A Yahoo Finance parser API for Stocks and Equity.</p>
+<pre><code>This module covers the most important attributes of stocks:
+Company Data, stock splits, peg ratio, dividends, market cap, ask, ask size, bid, bid size, pe ratio , name;
+
+And attributes common to all Securities:
+price, opening price, closing price, volume, day high, day low, exchange, ticker symbol, quote type.
+
+For more methods on the security, refer to &lt;code&gt;base._BaseSecurity&lt;/code&gt;
+
+Methods
+-------
+</code></pre>
+<p>related_news(self)
+returns upto 20 top news links related to a stock.</p>
+<p>tweets(self)
+returns upto 20 top tweets related to a stock.</p>
+<p>sentiment(self)
+returns average sentiment score based on tweet data.</p>
+<p>industry_recommendations(self)
+Returns dataframe of mutualfund stock holders.</p>
+<pre><code>company_summary(self)
+        Returns company summary.
+</code></pre>
+<p>returns(self,period,interval,start_date,end_date)
+returns stock returns for a specific period and interval</p>
+<p>returns_percentage(self,period,interval,start_date,end_date)
+returns stock returns in percentage for specific period and interval</p>
+<p>A typical application of this class first initialize an object with a valid ticker symbol, then use the
+class properties to extract information.</p>
+<pre><code>Example usage:
+
+try:
+    stock_goog = Stock("GOOG")
+    # fetch price
+    price = stock_goog.price
+
+    # fetch market cap
+    stock_market_cap = stock_goog.market_cap
+
+    # get 1 year returns
+    returns = stock_goog.returns(period=Duration.YEAR_1)
+
+    # get related news links
+    news_list = stock_goog.related_news()
+
+except:
+    print("Invalid Input Ticker")
+</code></pre>
+<p>The constructor of the Stock class for initializing a Stock object.</p>
+<pre><code>    Parameters
+    ----------
+    ticker_symbol :str
+            A valid ticker symbol for a Stock.
+
+    Raises
+    ------
+    InputError
+            if the input ticker_symbol is not a valid Stock ticker or data is not retrieved.
+    SecurityTypeError
+            if the Security type of the ticker is other than Stock, this error is raised.
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Stock(_BaseSecurity):
+    &#34;&#34;&#34;
+    A Yahoo Finance parser API for Stocks and Equity.
+
+        This module covers the most important attributes of stocks:
+        Company Data, stock splits, peg ratio, dividends, market cap, ask, ask size, bid, bid size, pe ratio , name;
+
+        And attributes common to all Securities:
+        price, opening price, closing price, volume, day high, day low, exchange, ticker symbol, quote type.
+
+        For more methods on the security, refer to ``base._BaseSecurity``
+
+        Methods
+        -------
+    related_news(self)
+                returns upto 20 top news links related to a stock.
+
+    tweets(self)
+                returns upto 20 top tweets related to a stock.
+
+    sentiment(self)
+                returns average sentiment score based on tweet data.
+
+    industry_recommendations(self)
+                Returns dataframe of mutualfund stock holders.
+
+        company_summary(self)
+                Returns company summary.
+    
+    returns(self,period,interval,start_date,end_date)
+        returns stock returns for a specific period and interval
+
+    returns_percentage(self,period,interval,start_date,end_date)
+        returns stock returns in percentage for specific period and interval
+
+
+    A typical application of this class first initialize an object with a valid ticker symbol, then use the
+        class properties to extract information.
+
+        Example usage:
+                
+        try:
+            stock_goog = Stock(&#34;GOOG&#34;)
+            # fetch price
+            price = stock_goog.price
+
+            # fetch market cap
+            stock_market_cap = stock_goog.market_cap
+
+            # get 1 year returns
+            returns = stock_goog.returns(period=Duration.YEAR_1)
+
+            # get related news links
+            news_list = stock_goog.related_news()
+            
+        except:
+            print(&#34;Invalid Input Ticker&#34;)
+    &#34;&#34;&#34;
+
+    def __init__(self,ticker_symbol):
+        &#34;&#34;&#34;
+        The constructor of the Stock class for initializing a Stock object.
+                
+                Parameters
+                ----------
+                ticker_symbol :str
+                        A valid ticker symbol for a Stock.
+                
+                Raises
+                ------
+                InputError
+                        if the input ticker_symbol is not a valid Stock ticker or data is not retrieved.
+                SecurityTypeError
+                        if the Security type of the ticker is other than Stock, this error is raised.
+        &#34;&#34;&#34;
+        
+        self.__ticker_symbol = ticker_symbol
+        super().__init__(self.__ticker_symbol)
+        try:
+            self.__security = self._BaseSecurity__security
+
+            s = self.__security.info
+            if &#39;quoteType&#39; in self.__security.info.keys() and QuoteType(self.__security.info[&#39;quoteType&#39;]) == QuoteType(&#34;EQUITY&#34;) :
+                self.__quote_type = QuoteType(self.__security.info[&#39;quoteType&#39;])
+            else:
+                raise SecurityTypeError(self.__ticker_symbol, &#34;Ticker Symbol does not match Stock security&#34;)
+            
+            self.__company_data = CompanyData(s[&#34;longName&#34;],s[&#34;address1&#34;],
+                                             s[&#34;longBusinessSummary&#34;],s[&#34;logo_url&#34;],
+                                             s[&#34;sector&#34;],s[&#34;profitMargins&#34;],s[&#34;country&#34;],
+                                             s[&#34;website&#34;])
+            
+            self.__stock_splits = self.__security.splits
+            self.__peg_ratio = Decimal(s[&#34;pegRatio&#34;])
+            self.__dividends = self.__security.dividends
+            self.__market_cap = Decimal(s[&#34;marketCap&#34;])
+            self.__ask = Decimal(s[&#34;ask&#34;])
+            self.__ask_size = Decimal(s[&#34;askSize&#34;])
+            self.__bid = Decimal(s[&#34;bid&#34;])
+            self.__bid_size = Decimal(s[&#34;bidSize&#34;])
+            self.__pe_ratio = Decimal(s[&#34;trailingPE&#34;])
+            self.__name = s[&#34;shortName&#34;]
+            self.__news = None
+            self.__tweets = None
+        except:
+            raise InputError(ticker_symbol,&#34;API data retrieval error&#34;)
+
+
+    @property
+    def name(self):
+        &#34;&#34;&#34;Returns name of company issuing stock.
+
+        Returns
+        -------
+        str
+            String name of Stock
+        &#34;&#34;&#34;
+        return self.__name
+
+    @property
+    def company_data(self):
+        &#34;&#34;&#34;Returns object providing company details.
+
+        Returns
+        -------
+        CompanyData
+            Object providing company details
+        &#34;&#34;&#34;
+        return copy.deepcopy(self.__company_data)
+
+    @property
+    def splits(self):
+      &#34;&#34;&#34;Returns dataframe of stock splits.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of stock splits
+        &#34;&#34;&#34;    
+      return copy.deepcopy(self.__stock_splits)
+
+    @property
+    def dividends(self):
+        &#34;&#34;&#34;Returns dataframe of security dividends.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of security dividends
+        &#34;&#34;&#34;    
+        return copy.deepcopy(self.__dividends)
+    
+
+    @property
+    def market_cap(self):
+        &#34;&#34;&#34;Returns market cap of company.
+
+        Returns
+        -------
+        Decimal
+            market cap of company.
+        &#34;&#34;&#34;
+        return self.__market_cap
+
+    @property
+    def peg_ratio(self):
+        &#34;&#34;&#34;Returns stock price earnings growth ratio.
+
+        Returns
+        -------
+        Decimal
+            Stock PEG ratio
+        &#34;&#34;&#34;   
+        return self.__peg_ratio
+
+    @property
+    def ask(self):
+        &#34;&#34;&#34;Returns ask price for Stock Object.
+
+        Returns
+        -------
+        Decimal
+            ask price for Stock Object
+        &#34;&#34;&#34;     
+        return self.__ask
+
+    @property
+    def ask_size(self):
+        &#34;&#34;&#34;Returns ask size for Stock.
+
+        Returns
+        -------
+        Decimal
+            ask size for Stock
+        &#34;&#34;&#34;      
+        return self.__ask_size
+
+    @property
+    def bid(self):
+        &#34;&#34;&#34;Returns bid price for Stock Object.
+
+        Returns
+        -------
+        Decimal
+            bid price for Stock Object
+        &#34;&#34;&#34;
+        return self.__bid
+
+    @property
+    def bid_size(self):
+        &#34;&#34;&#34;Returns bid size for Stock.
+
+        Returns
+        -------
+        Decimal
+            ask bid for Stock
+        &#34;&#34;&#34;      
+        return self.__bid_size
+
+    @property
+    def pe_ratio(self):
+        &#34;&#34;&#34;Returns price earnings ratio for Stock.
+
+        Returns
+        -------
+        Decimal
+            rice earnings ratio for Stock
+        &#34;&#34;&#34;       
+        return self.__pe_ratio
+
+    
+    def __calculate_returns(self,period:Duration = Duration.YEAR_1, 
+                interval: Interval = Interval.MONTH_1, percentage = False,
+                start:date = None, end:date = None): 
+        historic_data = self.historical_data(duration=period,interval=interval)
+        open_price = historic_data.iloc[0][&#34;Open&#34;]
+        close_price = historic_data.iloc[-1][&#34;Close&#34;]
+        total_return = close_price - open_price
+        for i,dividend in enumerate(historic_data[&#34;Dividends&#34;]):
+            if dividend &gt; 0:
+                total_return += dividend*((historic_data.iloc[i][&#34;Open&#34;]+historic_data.iloc[i][&#34;Close&#34;])/2)
+        if not percentage:
+            return total_return
+        else:
+            return (total_return/open_price) * 100
+
+    def returns(self,period:Duration = Duration.YEAR_1, 
+                interval: Interval = Interval.MONTH_1, 
+                start:date = None, end:date = None):
+        &#34;&#34;&#34;
+        Returns absolute Stock returns for period using specified interval.
+
+        Parameters
+        ----------
+        period : Duration, optional
+            Time period for returns, by default Duration.YEAR_1
+        interval : Interval, optional
+            Interval for return calculation, by default Interval.MONTH_1
+        start : date, optional
+            end date for return duration, by default None, use Duration
+        end : date, optional
+            end date for return duration, by default None, use Duration
+
+        Returns
+        -------
+        Decimal
+            absolute stock return amount.
+        &#34;&#34;&#34;
+        return Decimal(self.__calculate_returns(period,interval,False,start,end))
+
+    def returns_percentage(self,period:Duration = Duration.YEAR_1, 
+                interval: Interval = Interval.MONTH_1,
+                start:date = None, end:date = None):
+        &#34;&#34;&#34;
+        Returns percentage Stock returns for period using specified interval.
+
+        Parameters
+        ----------
+        period : Duration, optional
+            Time period for returns, by default Duration.YEAR_1
+        interval : Interval, optional
+            Interval for return calculation, by default Interval.MONTH_1
+        start : date, optional
+            end date for return duration, by default None, use Duration
+        end : date, optional
+            end date for return duration, by default None, use Duration
+
+        Returns
+        -------
+        Decimal
+            percentage return of a stock.
+        &#34;&#34;&#34;    
+        return Decimal(self.__calculate_returns(period,interval,True,start,end))
+
+    
+    def company_summary(self):
+        &#34;&#34;&#34;Prints company data summary.
+        &#34;&#34;&#34;
+        print(self.company_data)
+    
+
+    def sentiment(self):
+        &#34;&#34;&#34;Returns average Sentiment Score of top 20 tweets.
+
+        Returns
+        -------
+        Decimal
+            Sentiment score from 0 to 1. with 1 being most positive and 0 least.
+
+        Raises
+        ------
+        TwitterError
+            Riased when error in calling twitter API.
+        &#34;&#34;&#34;
+        if self.__tweets is None:
+            raise TwitterError(self.__ticker_symbol ,&#34; Error getting twitter data.&#34;)
+
+        if len(self.__tweets) == 0:
+            raise TwitterError(self.__ticker_symbol ,&#34; Error getting twitter data.&#34;)
+        sentiments = []
+        for t in self.__tweets:
+            obj = Sentiment(t)
+            sentiments.append(obj.analyze())
+        return Decimal(sum(sentiments)/len(sentiments))
+
+    
+
+    def industry_recommendations(self):
+        &#34;&#34;&#34;Returns dataframe of industry recommendations.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of industry recommendations
+        &#34;&#34;&#34;  
+        return self.__security.recommendations
+    
+
+    def tweets(self,consumer_key, consumer_secret, access_token,access_token_secret):
+        &#34;&#34;&#34;[summary]
+
+        Parameters
+        ----------
+        consumer_key : str
+            twitter API consumer key
+        consumer_secret : str
+             twitter API consumer Secret
+        access_token : str
+             twitter API access token
+        access_token_secret : str
+             twitter API access token secret
+
+        Returns
+        -------
+        list[str]
+            list of upto 20 tweets from twitter for Stock symbol.
+
+        Raises
+        ------
+        TwitterError
+            Riased when error in calling or authenticating twitter API.
+        &#34;&#34;&#34;
+        if self.__tweets is None:
+            self.__tweets = []
+            # Authenticate to Twitter
+            try:
+                auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+                auth.set_access_token(access_token, access_token_secret)
+
+                # Create API object
+                api = tweepy.API(auth, wait_on_rate_limit=True,
+                    wait_on_rate_limit_notify=True)
+                for tweet in api.search(q=&#34;$TSLA&#34;, lang=&#34;en&#34;, rpp=20):
+                    self.__tweets.append(tweet.text)
+            except:
+                raise TwitterError(self.__ticker_symbol ,&#34; Error getting twitter data. Check API keys.&#34;)
+        return self.__tweets
+    
+    def related_news(self):
+        &#34;&#34;&#34;Returns a list of links to news items related to the Stock.
+
+        Returns
+        -------
+        list[str]
+            list of links to news items related to the Stock.
+
+        Raises
+        ------
+        NewsError
+            Raised when error occurs in getting news links.
+        &#34;&#34;&#34;
+        news_list = []
+        for news_article in search(self.__ticker_symbol, tld=&#34;com&#34;, num=20, stop=20, pause=2):
+            news_list.append(news_article)
+
+        if len(news_list) == 0:
+                raise NewsError(self.__ticker_symbol ,&#34; Error getting related news.&#34;)
+
+        return news_list
+
+    @property
+    def financials(self):
+        &#34;&#34;&#34;Returns dataframe of stock financials.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of stock financials
+        &#34;&#34;&#34;  
+        return self.__security.financials
+
+    @property
+    def calendar(self):
+        &#34;&#34;&#34;Returns dataframe of stock Calendar.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of stock Calendar
+        &#34;&#34;&#34;     
+        return self.__security.calendar
+
+    @property
+    def cashflow(self):
+        &#34;&#34;&#34;Returns dataframe of cashflow.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of cashflow
+        &#34;&#34;&#34;     
+        return self.__security.cashflow
+
+    @property
+    def earnings(self):
+        &#34;&#34;&#34;Returns dataframe of earnings.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of earnings
+        &#34;&#34;&#34;      
+        return self.__security.earnings
+
+
+    @property
+    def major_holders(self):
+        &#34;&#34;&#34;Returns dataframe of major stock holders.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of major stock holders
+        &#34;&#34;&#34;    
+        return self.__security.major_holders
+
+    @property   
+    def actions(self):
+        &#34;&#34;&#34;Returns dataframe of splits and dividends.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of splits and dividends
+        &#34;&#34;&#34;      
+        return self.__security.actions
+
+    @property   
+    def balance_sheet(self):
+        &#34;&#34;&#34;Returns dataframe containing balance sheet.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of containing balance sheet
+        &#34;&#34;&#34;    
+        return self.__security.balance_sheet
+
+    @property
+    def institutional_holders(self):
+        &#34;&#34;&#34;Returns dataframe of institutional stock holders.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of institutional stock holders
+        &#34;&#34;&#34;      
+        return self.__security.institutional_holders
+
+    @property
+    def mutualfund_holders(self):
+        &#34;&#34;&#34;Returns dataframe of mutualfund stock holders.
+
+        Returns
+        -------
+        Pandas.DataFrame
+            dataframe of mutualfund stock holders
+        &#34;&#34;&#34;    
+        return self.__security.mutualfund_holders</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="yayFinPy.stock.Stock.actions"><code class="name">var <span class="ident">actions</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of splits and dividends.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of splits and dividends</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property   
+def actions(self):
+    &#34;&#34;&#34;Returns dataframe of splits and dividends.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of splits and dividends
+    &#34;&#34;&#34;      
+    return self.__security.actions</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.ask"><code class="name">var <span class="ident">ask</span></code></dt>
+<dd>
+<div class="desc"><p>Returns ask price for Stock Object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>ask price for Stock Object</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ask(self):
+    &#34;&#34;&#34;Returns ask price for Stock Object.
+
+    Returns
+    -------
+    Decimal
+        ask price for Stock Object
+    &#34;&#34;&#34;     
+    return self.__ask</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.ask_size"><code class="name">var <span class="ident">ask_size</span></code></dt>
+<dd>
+<div class="desc"><p>Returns ask size for Stock.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>ask size for Stock</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ask_size(self):
+    &#34;&#34;&#34;Returns ask size for Stock.
+
+    Returns
+    -------
+    Decimal
+        ask size for Stock
+    &#34;&#34;&#34;      
+    return self.__ask_size</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.balance_sheet"><code class="name">var <span class="ident">balance_sheet</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe containing balance sheet.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of containing balance sheet</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property   
+def balance_sheet(self):
+    &#34;&#34;&#34;Returns dataframe containing balance sheet.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of containing balance sheet
+    &#34;&#34;&#34;    
+    return self.__security.balance_sheet</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.bid"><code class="name">var <span class="ident">bid</span></code></dt>
+<dd>
+<div class="desc"><p>Returns bid price for Stock Object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>bid price for Stock Object</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def bid(self):
+    &#34;&#34;&#34;Returns bid price for Stock Object.
+
+    Returns
+    -------
+    Decimal
+        bid price for Stock Object
+    &#34;&#34;&#34;
+    return self.__bid</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.bid_size"><code class="name">var <span class="ident">bid_size</span></code></dt>
+<dd>
+<div class="desc"><p>Returns bid size for Stock.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>ask bid for Stock</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def bid_size(self):
+    &#34;&#34;&#34;Returns bid size for Stock.
+
+    Returns
+    -------
+    Decimal
+        ask bid for Stock
+    &#34;&#34;&#34;      
+    return self.__bid_size</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.calendar"><code class="name">var <span class="ident">calendar</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of stock Calendar.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of stock Calendar</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def calendar(self):
+    &#34;&#34;&#34;Returns dataframe of stock Calendar.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of stock Calendar
+    &#34;&#34;&#34;     
+    return self.__security.calendar</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.cashflow"><code class="name">var <span class="ident">cashflow</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of cashflow.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of cashflow</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def cashflow(self):
+    &#34;&#34;&#34;Returns dataframe of cashflow.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of cashflow
+    &#34;&#34;&#34;     
+    return self.__security.cashflow</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.closing_price"><code class="name">var <span class="ident">closing_price</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.closing_price" href="base.html#yayFinPy.base._BaseSecurity.closing_price">closing_price</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the closing market price of security.</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.company_data"><code class="name">var <span class="ident">company_data</span></code></dt>
+<dd>
+<div class="desc"><p>Returns object providing company details.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="yayFinPy.stock.CompanyData" href="#yayFinPy.stock.CompanyData">CompanyData</a></code></dt>
+<dd>Object providing company details</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def company_data(self):
+    &#34;&#34;&#34;Returns object providing company details.
+
+    Returns
+    -------
+    CompanyData
+        Object providing company details
+    &#34;&#34;&#34;
+    return copy.deepcopy(self.__company_data)</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.day_high"><code class="name">var <span class="ident">day_high</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.day_high" href="base.html#yayFinPy.base._BaseSecurity.day_high">day_high</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the day's highest market price of security.</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.day_low"><code class="name">var <span class="ident">day_low</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.day_low" href="base.html#yayFinPy.base._BaseSecurity.day_low">day_low</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the day's lowest market price of security.</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.dividends"><code class="name">var <span class="ident">dividends</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of security dividends.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of security dividends</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def dividends(self):
+    &#34;&#34;&#34;Returns dataframe of security dividends.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of security dividends
+    &#34;&#34;&#34;    
+    return copy.deepcopy(self.__dividends)</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.earnings"><code class="name">var <span class="ident">earnings</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of earnings.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of earnings</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def earnings(self):
+    &#34;&#34;&#34;Returns dataframe of earnings.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of earnings
+    &#34;&#34;&#34;      
+    return self.__security.earnings</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.exchange"><code class="name">var <span class="ident">exchange</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.exchange" href="base.html#yayFinPy.base._BaseSecurity.exchange">exchange</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>str
+returns the exchange in which security is being traded.</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.financials"><code class="name">var <span class="ident">financials</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of stock financials.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of stock financials</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def financials(self):
+    &#34;&#34;&#34;Returns dataframe of stock financials.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of stock financials
+    &#34;&#34;&#34;  
+    return self.__security.financials</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.institutional_holders"><code class="name">var <span class="ident">institutional_holders</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of institutional stock holders.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of institutional stock holders</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def institutional_holders(self):
+    &#34;&#34;&#34;Returns dataframe of institutional stock holders.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of institutional stock holders
+    &#34;&#34;&#34;      
+    return self.__security.institutional_holders</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.major_holders"><code class="name">var <span class="ident">major_holders</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of major stock holders.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of major stock holders</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def major_holders(self):
+    &#34;&#34;&#34;Returns dataframe of major stock holders.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of major stock holders
+    &#34;&#34;&#34;    
+    return self.__security.major_holders</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.market_cap"><code class="name">var <span class="ident">market_cap</span></code></dt>
+<dd>
+<div class="desc"><p>Returns market cap of company.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>market cap of company.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def market_cap(self):
+    &#34;&#34;&#34;Returns market cap of company.
+
+    Returns
+    -------
+    Decimal
+        market cap of company.
+    &#34;&#34;&#34;
+    return self.__market_cap</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.mutualfund_holders"><code class="name">var <span class="ident">mutualfund_holders</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of mutualfund stock holders.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of mutualfund stock holders</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def mutualfund_holders(self):
+    &#34;&#34;&#34;Returns dataframe of mutualfund stock holders.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of mutualfund stock holders
+    &#34;&#34;&#34;    
+    return self.__security.mutualfund_holders</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"><p>Returns name of company issuing stock.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>String name of Stock</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def name(self):
+    &#34;&#34;&#34;Returns name of company issuing stock.
+
+    Returns
+    -------
+    str
+        String name of Stock
+    &#34;&#34;&#34;
+    return self.__name</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.opening_price"><code class="name">var <span class="ident">opening_price</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.opening_price" href="base.html#yayFinPy.base._BaseSecurity.opening_price">opening_price</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the opening market price of security.</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.pe_ratio"><code class="name">var <span class="ident">pe_ratio</span></code></dt>
+<dd>
+<div class="desc"><p>Returns price earnings ratio for Stock.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>rice earnings ratio for Stock</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def pe_ratio(self):
+    &#34;&#34;&#34;Returns price earnings ratio for Stock.
+
+    Returns
+    -------
+    Decimal
+        rice earnings ratio for Stock
+    &#34;&#34;&#34;       
+    return self.__pe_ratio</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.peg_ratio"><code class="name">var <span class="ident">peg_ratio</span></code></dt>
+<dd>
+<div class="desc"><p>Returns stock price earnings growth ratio.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>Stock PEG ratio</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def peg_ratio(self):
+    &#34;&#34;&#34;Returns stock price earnings growth ratio.
+
+    Returns
+    -------
+    Decimal
+        Stock PEG ratio
+    &#34;&#34;&#34;   
+    return self.__peg_ratio</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.price"><code class="name">var <span class="ident">price</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.price" href="base.html#yayFinPy.base._BaseSecurity.price">price</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the current regular market price of the security.</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.quote_type"><code class="name">var <span class="ident">quote_type</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.quote_type" href="base.html#yayFinPy.base._BaseSecurity.quote_type">quote_type</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>QuoteType
+returns the quote type of the security. (Refer to QuoteType Enum).</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.splits"><code class="name">var <span class="ident">splits</span></code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of stock splits.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of stock splits</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def splits(self):
+  &#34;&#34;&#34;Returns dataframe of stock splits.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of stock splits
+    &#34;&#34;&#34;    
+  return copy.deepcopy(self.__stock_splits)</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.ticker_symbol"><code class="name">var <span class="ident">ticker_symbol</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.ticker_symbol" href="base.html#yayFinPy.base._BaseSecurity.ticker_symbol">ticker_symbol</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>str
+returns the ticker symbol associated with security.</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.volume"><code class="name">var <span class="ident">volume</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.volume" href="base.html#yayFinPy.base._BaseSecurity.volume">volume</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the present day traded market volume of security.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="yayFinPy.stock.Stock.accumulation_distribution"><code class="name flex">
+<span>def <span class="ident">accumulation_distribution</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.accumulation_distribution" href="base.html#yayFinPy.base._BaseSecurity.accumulation_distribution">accumulation_distribution</a></code>
+</p>
+<div class="desc inherited"><p>returns the accumulation/distribution indicator (AD) indicator that uses volume and price to assess whether
+a stock is being accumulated or …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.balance_of_power"><code class="name flex">
+<span>def <span class="ident">balance_of_power</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.balance_of_power" href="base.html#yayFinPy.base._BaseSecurity.balance_of_power">balance_of_power</a></code>
+</p>
+<div class="desc inherited"><p>returns Balance Of Power (BOP) data for a given duration for a security. This indicator uses price to
+measure buying and selling pressure. It …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.bollinger_bands"><code class="name flex">
+<span>def <span class="ident">bollinger_bands</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7, dev_up=Multiplier.TWICE, dev_down=Multiplier.TWICE)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.bollinger_bands" href="base.html#yayFinPy.base._BaseSecurity.bollinger_bands">bollinger_bands</a></code>
+</p>
+<div class="desc inherited"><p>returns upperband, middleband, lowerband for price of a security averaged on timeperiod for given duration.
+and deviation multiples …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.commodity_channel_index"><code class="name flex">
+<span>def <span class="ident">commodity_channel_index</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.commodity_channel_index" href="base.html#yayFinPy.base._BaseSecurity.commodity_channel_index">commodity_channel_index</a></code>
+</p>
+<div class="desc inherited"><p>returns the CCI market indicator used to track market movements that may indicate buying or selling.
+CCI is calculated with the following formula: …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.company_summary"><code class="name flex">
+<span>def <span class="ident">company_summary</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Prints company data summary.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def company_summary(self):
+    &#34;&#34;&#34;Prints company data summary.
+    &#34;&#34;&#34;
+    print(self.company_data)</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.download_data"><code class="name flex">
+<span>def <span class="ident">download_data</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, interval: <a title="yayFinPy.enumerations.Interval" href="enumerations.html#yayFinPy.enumerations.Interval">Interval</a> = Interval.DAY_1, start: datetime.date = None, end: datetime.date = None, threads: bool = False)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.download_data" href="base.html#yayFinPy.base._BaseSecurity.download_data">download_data</a></code>
+</p>
+<div class="desc inherited"><p>downloads price, volume data for a security …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.historical_data"><code class="name flex">
+<span>def <span class="ident">historical_data</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, interval: <a title="yayFinPy.enumerations.Interval" href="enumerations.html#yayFinPy.enumerations.Interval">Interval</a> = Interval.DAY_1)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.historical_data" href="base.html#yayFinPy.base._BaseSecurity.historical_data">historical_data</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Pandas.Dataframe
+returns price, volume data for a security …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.industry_recommendations"><code class="name flex">
+<span>def <span class="ident">industry_recommendations</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns dataframe of industry recommendations.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>dataframe of industry recommendations</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def industry_recommendations(self):
+    &#34;&#34;&#34;Returns dataframe of industry recommendations.
+
+    Returns
+    -------
+    Pandas.DataFrame
+        dataframe of industry recommendations
+    &#34;&#34;&#34;  
+    return self.__security.recommendations</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.linear_regression"><code class="name flex">
+<span>def <span class="ident">linear_regression</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.linear_regression" href="base.html#yayFinPy.base._BaseSecurity.linear_regression">linear_regression</a></code>
+</p>
+<div class="desc inherited"><p>returns Linear Regression Indicator used for trend identification and trend following in a similar to moving averages.
+It has advantage of having less …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.moving_average"><code class="name flex">
+<span>def <span class="ident">moving_average</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.moving_average" href="base.html#yayFinPy.base._BaseSecurity.moving_average">moving_average</a></code>
+</p>
+<div class="desc inherited"><p>returns moving average price for a security averaged on timeperiod for given duration …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.rate_of_change_ratio"><code class="name flex">
+<span>def <span class="ident">rate_of_change_ratio</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.rate_of_change_ratio" href="base.html#yayFinPy.base._BaseSecurity.rate_of_change_ratio">rate_of_change_ratio</a></code>
+</p>
+<div class="desc inherited"><p>returns rate of change of ratio (price/previous price) averaged on timeperiod for a given duration …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.related_news"><code class="name flex">
+<span>def <span class="ident">related_news</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a list of links to news items related to the Stock.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[str]</code></dt>
+<dd>list of links to news items related to the Stock.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>NewsError</code></dt>
+<dd>Raised when error occurs in getting news links.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def related_news(self):
+    &#34;&#34;&#34;Returns a list of links to news items related to the Stock.
+
+    Returns
+    -------
+    list[str]
+        list of links to news items related to the Stock.
+
+    Raises
+    ------
+    NewsError
+        Raised when error occurs in getting news links.
+    &#34;&#34;&#34;
+    news_list = []
+    for news_article in search(self.__ticker_symbol, tld=&#34;com&#34;, num=20, stop=20, pause=2):
+        news_list.append(news_article)
+
+    if len(news_list) == 0:
+            raise NewsError(self.__ticker_symbol ,&#34; Error getting related news.&#34;)
+
+    return news_list</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.relative_strength_index"><code class="name flex">
+<span>def <span class="ident">relative_strength_index</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.relative_strength_index" href="base.html#yayFinPy.base._BaseSecurity.relative_strength_index">relative_strength_index</a></code>
+</p>
+<div class="desc inherited"><p>returns relative strength index averaged on timeperiod for a given duration. It measures the magnitude of recent
+price changes to evaluate overbought …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.returns"><code class="name flex">
+<span>def <span class="ident">returns</span></span>(<span>self, period: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.YEAR_1, interval: <a title="yayFinPy.enumerations.Interval" href="enumerations.html#yayFinPy.enumerations.Interval">Interval</a> = Interval.MONTH_1, start: datetime.date = None, end: datetime.date = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns absolute Stock returns for period using specified interval.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>period</code></strong> :&ensp;<code>Duration</code>, optional</dt>
+<dd>Time period for returns, by default Duration.YEAR_1</dd>
+<dt><strong><code>interval</code></strong> :&ensp;<code>Interval</code>, optional</dt>
+<dd>Interval for return calculation, by default Interval.MONTH_1</dd>
+<dt><strong><code>start</code></strong> :&ensp;<code>date</code>, optional</dt>
+<dd>end date for return duration, by default None, use Duration</dd>
+<dt><strong><code>end</code></strong> :&ensp;<code>date</code>, optional</dt>
+<dd>end date for return duration, by default None, use Duration</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>absolute stock return amount.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def returns(self,period:Duration = Duration.YEAR_1, 
+            interval: Interval = Interval.MONTH_1, 
+            start:date = None, end:date = None):
+    &#34;&#34;&#34;
+    Returns absolute Stock returns for period using specified interval.
+
+    Parameters
+    ----------
+    period : Duration, optional
+        Time period for returns, by default Duration.YEAR_1
+    interval : Interval, optional
+        Interval for return calculation, by default Interval.MONTH_1
+    start : date, optional
+        end date for return duration, by default None, use Duration
+    end : date, optional
+        end date for return duration, by default None, use Duration
+
+    Returns
+    -------
+    Decimal
+        absolute stock return amount.
+    &#34;&#34;&#34;
+    return Decimal(self.__calculate_returns(period,interval,False,start,end))</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.returns_percentage"><code class="name flex">
+<span>def <span class="ident">returns_percentage</span></span>(<span>self, period: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.YEAR_1, interval: <a title="yayFinPy.enumerations.Interval" href="enumerations.html#yayFinPy.enumerations.Interval">Interval</a> = Interval.MONTH_1, start: datetime.date = None, end: datetime.date = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns percentage Stock returns for period using specified interval.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>period</code></strong> :&ensp;<code>Duration</code>, optional</dt>
+<dd>Time period for returns, by default Duration.YEAR_1</dd>
+<dt><strong><code>interval</code></strong> :&ensp;<code>Interval</code>, optional</dt>
+<dd>Interval for return calculation, by default Interval.MONTH_1</dd>
+<dt><strong><code>start</code></strong> :&ensp;<code>date</code>, optional</dt>
+<dd>end date for return duration, by default None, use Duration</dd>
+<dt><strong><code>end</code></strong> :&ensp;<code>date</code>, optional</dt>
+<dd>end date for return duration, by default None, use Duration</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>percentage return of a stock.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def returns_percentage(self,period:Duration = Duration.YEAR_1, 
+            interval: Interval = Interval.MONTH_1,
+            start:date = None, end:date = None):
+    &#34;&#34;&#34;
+    Returns percentage Stock returns for period using specified interval.
+
+    Parameters
+    ----------
+    period : Duration, optional
+        Time period for returns, by default Duration.YEAR_1
+    interval : Interval, optional
+        Interval for return calculation, by default Interval.MONTH_1
+    start : date, optional
+        end date for return duration, by default None, use Duration
+    end : date, optional
+        end date for return duration, by default None, use Duration
+
+    Returns
+    -------
+    Decimal
+        percentage return of a stock.
+    &#34;&#34;&#34;    
+    return Decimal(self.__calculate_returns(period,interval,True,start,end))</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.sentiment"><code class="name flex">
+<span>def <span class="ident">sentiment</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns average Sentiment Score of top 20 tweets.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>Sentiment score from 0 to 1. with 1 being most positive and 0 least.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>TwitterError</code></dt>
+<dd>Riased when error in calling twitter API.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sentiment(self):
+    &#34;&#34;&#34;Returns average Sentiment Score of top 20 tweets.
+
+    Returns
+    -------
+    Decimal
+        Sentiment score from 0 to 1. with 1 being most positive and 0 least.
+
+    Raises
+    ------
+    TwitterError
+        Riased when error in calling twitter API.
+    &#34;&#34;&#34;
+    if self.__tweets is None:
+        raise TwitterError(self.__ticker_symbol ,&#34; Error getting twitter data.&#34;)
+
+    if len(self.__tweets) == 0:
+        raise TwitterError(self.__ticker_symbol ,&#34; Error getting twitter data.&#34;)
+    sentiments = []
+    for t in self.__tweets:
+        obj = Sentiment(t)
+        sentiments.append(obj.analyze())
+    return Decimal(sum(sentiments)/len(sentiments))</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.standard_deviation"><code class="name flex">
+<span>def <span class="ident">standard_deviation</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7, dev=Multiplier.ONCE)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.standard_deviation" href="base.html#yayFinPy.base._BaseSecurity.standard_deviation">standard_deviation</a></code>
+</p>
+<div class="desc inherited"><p>returns the Standard deviation indicator which is the statistical measure of market volatility,
+measuring how widely prices are dispersed from the …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.time_series_forecast"><code class="name flex">
+<span>def <span class="ident">time_series_forecast</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.time_series_forecast" href="base.html#yayFinPy.base._BaseSecurity.time_series_forecast">time_series_forecast</a></code>
+</p>
+<div class="desc inherited"><p>returns Time Series Forecast (TSF) indicator, which is based on a linear regression technique that uses the
+least squares method to fit a straight …</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.to_dict" href="base.html#yayFinPy.base._BaseSecurity.to_dict">to_dict</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>dict
+returns the information about the security as key-value pairs.</p></div>
+</dd>
+<dt id="yayFinPy.stock.Stock.tweets"><code class="name flex">
+<span>def <span class="ident">tweets</span></span>(<span>self, consumer_key, consumer_secret, access_token, access_token_secret)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>[summary]</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>consumer_key</code></strong> :&ensp;<code>str</code></dt>
+<dd>twitter API consumer key</dd>
+<dt><strong><code>consumer_secret</code></strong> :&ensp;<code>str</code></dt>
+<dd>twitter API consumer Secret</dd>
+<dt><strong><code>access_token</code></strong> :&ensp;<code>str</code></dt>
+<dd>twitter API access token</dd>
+<dt><strong><code>access_token_secret</code></strong> :&ensp;<code>str</code></dt>
+<dd>twitter API access token secret</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[str]</code></dt>
+<dd>list of upto 20 tweets from twitter for Stock symbol.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>TwitterError</code></dt>
+<dd>Riased when error in calling or authenticating twitter API.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tweets(self,consumer_key, consumer_secret, access_token,access_token_secret):
+    &#34;&#34;&#34;[summary]
+
+    Parameters
+    ----------
+    consumer_key : str
+        twitter API consumer key
+    consumer_secret : str
+         twitter API consumer Secret
+    access_token : str
+         twitter API access token
+    access_token_secret : str
+         twitter API access token secret
+
+    Returns
+    -------
+    list[str]
+        list of upto 20 tweets from twitter for Stock symbol.
+
+    Raises
+    ------
+    TwitterError
+        Riased when error in calling or authenticating twitter API.
+    &#34;&#34;&#34;
+    if self.__tweets is None:
+        self.__tweets = []
+        # Authenticate to Twitter
+        try:
+            auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+            auth.set_access_token(access_token, access_token_secret)
+
+            # Create API object
+            api = tweepy.API(auth, wait_on_rate_limit=True,
+                wait_on_rate_limit_notify=True)
+            for tweet in api.search(q=&#34;$TSLA&#34;, lang=&#34;en&#34;, rpp=20):
+                self.__tweets.append(tweet.text)
+        except:
+            raise TwitterError(self.__ticker_symbol ,&#34; Error getting twitter data. Check API keys.&#34;)
+    return self.__tweets</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.stock.Stock.variance"><code class="name flex">
+<span>def <span class="ident">variance</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7, dev=Multiplier.ONCE)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.variance" href="base.html#yayFinPy.base._BaseSecurity.variance">variance</a></code>
+</p>
+<div class="desc inherited"><p>returns Variance indicator which is the statistical measure of market volatility, obtained by squaring the
+standard deviation …</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="yayFinPy" href="index.html">yayFinPy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="yayFinPy.stock.CompanyData" href="#yayFinPy.stock.CompanyData">CompanyData</a></code></h4>
+<ul class="two-column">
+<li><code><a title="yayFinPy.stock.CompanyData.address" href="#yayFinPy.stock.CompanyData.address">address</a></code></li>
+<li><code><a title="yayFinPy.stock.CompanyData.business_summary" href="#yayFinPy.stock.CompanyData.business_summary">business_summary</a></code></li>
+<li><code><a title="yayFinPy.stock.CompanyData.country" href="#yayFinPy.stock.CompanyData.country">country</a></code></li>
+<li><code><a title="yayFinPy.stock.CompanyData.industry_sector" href="#yayFinPy.stock.CompanyData.industry_sector">industry_sector</a></code></li>
+<li><code><a title="yayFinPy.stock.CompanyData.logo_url" href="#yayFinPy.stock.CompanyData.logo_url">logo_url</a></code></li>
+<li><code><a title="yayFinPy.stock.CompanyData.name" href="#yayFinPy.stock.CompanyData.name">name</a></code></li>
+<li><code><a title="yayFinPy.stock.CompanyData.profits" href="#yayFinPy.stock.CompanyData.profits">profits</a></code></li>
+<li><code><a title="yayFinPy.stock.CompanyData.wesbite" href="#yayFinPy.stock.CompanyData.wesbite">wesbite</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="yayFinPy.stock.Stock" href="#yayFinPy.stock.Stock">Stock</a></code></h4>
+<ul class="">
+<li><code><a title="yayFinPy.stock.Stock.accumulation_distribution" href="base.html#yayFinPy.stock.Stock.accumulation_distribution">accumulation_distribution</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.actions" href="#yayFinPy.stock.Stock.actions">actions</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.ask" href="#yayFinPy.stock.Stock.ask">ask</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.ask_size" href="#yayFinPy.stock.Stock.ask_size">ask_size</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.balance_of_power" href="base.html#yayFinPy.stock.Stock.balance_of_power">balance_of_power</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.balance_sheet" href="#yayFinPy.stock.Stock.balance_sheet">balance_sheet</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.bid" href="#yayFinPy.stock.Stock.bid">bid</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.bid_size" href="#yayFinPy.stock.Stock.bid_size">bid_size</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.bollinger_bands" href="base.html#yayFinPy.stock.Stock.bollinger_bands">bollinger_bands</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.calendar" href="#yayFinPy.stock.Stock.calendar">calendar</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.cashflow" href="#yayFinPy.stock.Stock.cashflow">cashflow</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.closing_price" href="base.html#yayFinPy.stock.Stock.closing_price">closing_price</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.commodity_channel_index" href="base.html#yayFinPy.stock.Stock.commodity_channel_index">commodity_channel_index</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.company_data" href="#yayFinPy.stock.Stock.company_data">company_data</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.company_summary" href="#yayFinPy.stock.Stock.company_summary">company_summary</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.day_high" href="base.html#yayFinPy.stock.Stock.day_high">day_high</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.day_low" href="base.html#yayFinPy.stock.Stock.day_low">day_low</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.dividends" href="#yayFinPy.stock.Stock.dividends">dividends</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.download_data" href="base.html#yayFinPy.stock.Stock.download_data">download_data</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.earnings" href="#yayFinPy.stock.Stock.earnings">earnings</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.exchange" href="base.html#yayFinPy.stock.Stock.exchange">exchange</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.financials" href="#yayFinPy.stock.Stock.financials">financials</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.historical_data" href="base.html#yayFinPy.stock.Stock.historical_data">historical_data</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.industry_recommendations" href="#yayFinPy.stock.Stock.industry_recommendations">industry_recommendations</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.institutional_holders" href="#yayFinPy.stock.Stock.institutional_holders">institutional_holders</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.linear_regression" href="base.html#yayFinPy.stock.Stock.linear_regression">linear_regression</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.major_holders" href="#yayFinPy.stock.Stock.major_holders">major_holders</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.market_cap" href="#yayFinPy.stock.Stock.market_cap">market_cap</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.moving_average" href="base.html#yayFinPy.stock.Stock.moving_average">moving_average</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.mutualfund_holders" href="#yayFinPy.stock.Stock.mutualfund_holders">mutualfund_holders</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.name" href="#yayFinPy.stock.Stock.name">name</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.opening_price" href="base.html#yayFinPy.stock.Stock.opening_price">opening_price</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.pe_ratio" href="#yayFinPy.stock.Stock.pe_ratio">pe_ratio</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.peg_ratio" href="#yayFinPy.stock.Stock.peg_ratio">peg_ratio</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.price" href="base.html#yayFinPy.stock.Stock.price">price</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.quote_type" href="base.html#yayFinPy.stock.Stock.quote_type">quote_type</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.rate_of_change_ratio" href="base.html#yayFinPy.stock.Stock.rate_of_change_ratio">rate_of_change_ratio</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.related_news" href="#yayFinPy.stock.Stock.related_news">related_news</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.relative_strength_index" href="base.html#yayFinPy.stock.Stock.relative_strength_index">relative_strength_index</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.returns" href="#yayFinPy.stock.Stock.returns">returns</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.returns_percentage" href="#yayFinPy.stock.Stock.returns_percentage">returns_percentage</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.sentiment" href="#yayFinPy.stock.Stock.sentiment">sentiment</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.splits" href="#yayFinPy.stock.Stock.splits">splits</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.standard_deviation" href="base.html#yayFinPy.stock.Stock.standard_deviation">standard_deviation</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.ticker_symbol" href="base.html#yayFinPy.stock.Stock.ticker_symbol">ticker_symbol</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.time_series_forecast" href="base.html#yayFinPy.stock.Stock.time_series_forecast">time_series_forecast</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.to_dict" href="base.html#yayFinPy.stock.Stock.to_dict">to_dict</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.tweets" href="#yayFinPy.stock.Stock.tweets">tweets</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.variance" href="base.html#yayFinPy.stock.Stock.variance">variance</a></code></li>
+<li><code><a title="yayFinPy.stock.Stock.volume" href="base.html#yayFinPy.stock.Stock.volume">volume</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

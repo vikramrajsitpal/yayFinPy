@@ -1,0 +1,10 @@
+pandas>=0.24.0
+numpy>=1.16.5
+requests>=2.21
+multitasking>=0.0.7
+lxml>=4.5.1
+yfinance >= 0.1.59
+TA-Lib >= 0.4.19
+google >= 3.0.0
+sentifish >= 1.11.4
+beautifulsoup4 >= 4.9.3

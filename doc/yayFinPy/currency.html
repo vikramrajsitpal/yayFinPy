@@ -1,0 +1,1158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>yayFinPy.currency API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>yayFinPy.currency</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# 
+# Part of academic course project at CMU in the course API Design and 
+# Implementation - 17780 by Josh Bloch and Charlie Garrod.
+# 
+# Author:
+# - Tianyang Zhan
+
+import pandas as pd
+from decimal import *
+from .base import _BaseSecurity
+from datetime import date
+from .exceptions import *
+from .enumerations import *
+
+class Currency(_BaseSecurity):
+        &#34;&#34;&#34;
+        A Yahoo Finance parser for currency and cryptocurrency.
+
+        This module covers the most important attributes of a currency pair:
+        bid, ask, bid size, ask size, base currency, quote currency, circulating supply, name, short name;
+
+        And attributes common to all Securities:
+        price, opening price, closing price, volume, day high, day low, exchange, ticker symbol, quote type.
+
+        For more methods on the security, refer to ``base._BaseSecurity``
+
+
+        Methods
+        -------
+        to_df(self)
+                Convert the Currency object as a single-row Pandas DataFrame object.
+
+        to_dict(self)
+                Convert the Currency object as a dictionary.
+
+
+        A typical application of this class first initialize an object with a valid ticker symbol, then use the
+        class properties to extract information.
+
+        Example usage:
+                
+                try:
+                        currency = Currency(&#34;CNY=X&#34;)
+                        # fetch price
+                        price = currency.price
+
+                        # fetch currency pair
+                        base_currency = currency.base_currency
+                        quote_currency = currency.quote_currency
+                        print(&#34;Results: Price=%f, Base Currency=%s, Quote Currency=%s&#34;
+                                                                        %(price, base_currency, quote_currency))
+                except:
+                        print(&#34;Invalid Input Ticker&#34;)
+        &#34;&#34;&#34;
+
+        def __init__(self, ticker_symbol:str):
+                &#34;&#34;&#34;
+                The constructor of the Currency class for initializing a Currency object.
+                
+                Parameters
+                ----------
+                ticker_symbol :str
+                        A valid ticker symbol for currency or cryptocurrency.
+                
+                Raises
+                ------
+                InputError
+                        if the input ticker_symbol is not a valid Currency ticker.
+                ParsingError
+                        if the failure occurs when parsing data using the input ticker. 
+                &#34;&#34;&#34;
+                self.__ticker = None
+                self.__ticker_symbol = ticker_symbol
+                self.__bid = None
+                self.__bid_size = None
+                self.__ask = None
+                self.__ask_size = None
+                self.__base_currency = None
+                self.__quote_currency = None
+                self.__circulating_supply = None
+                self.__name = None
+                self.__short_name = None
+                self._init_ticker()
+
+        def _init_ticker(self):
+                
+                super().__init__(self.__ticker_symbol)
+                self.__ticker = self._BaseSecurity__security
+                
+                # ticker validation
+                quote_type = self.__ticker.info[&#39;quoteType&#39;]
+                if quote_type is QuoteType.CRYPTOCURRENCY and quote_type is QuoteType.CURRENCY:
+                        raise InputError(&#34;Invalid Ticker Symbol for Currency&#34;, &#34;Input Ticker &#34; + self.__ticker_symbol)
+
+                # init currency class
+                try:
+                        self.__bid = Decimal(&#39;NaN&#39;) if not self.__ticker.info[&#39;bid&#39;] else Decimal(self.__ticker.info[&#39;bid&#39;])
+                        self.__bid_size = Decimal(&#39;NaN&#39;) if not self.__ticker.info[&#39;bidSize&#39;] else Decimal(self.__ticker.info[&#39;bidSize&#39;])
+                        self.__ask = Decimal(&#39;NaN&#39;) if not self.__ticker.info[&#39;ask&#39;] else Decimal(self.__ticker.info[&#39;ask&#39;])
+                        self.__ask_size = Decimal(&#39;NaN&#39;) if not self.__ticker.info[&#39;askSize&#39;] else Decimal(self.__ticker.info[&#39;askSize&#39;])
+                        self.__circulating_supply = Decimal(&#39;NaN&#39;) if not self.__ticker.info[&#39;circulatingSupply&#39;] else Decimal(self.__ticker.info[&#39;circulatingSupply&#39;])
+                        self.__short_name = self.__ticker.info[&#39;shortName&#39;]
+                        self.__name = self.__short_name if &#39;name&#39; not in self.__ticker.info else self.__ticker.info[&#39;name&#39;]  
+                        self.__base_currency = self.__short_name.split(&#34;/&#34;)[0] if &#39;/&#39; in self.__short_name else self.__short_name.split(&#34; &#34;)[1]
+                        self.__quote_currency = self.__short_name.split(&#34;/&#34;)[1] if &#39;/&#39; in self.__short_name else self.__short_name.split(&#34; &#34;)[0]
+                except Exception as e:
+                        raise ParsingError(self.__ticker_symbol, &#34;Failed to parse data. &#34; + e)
+        
+
+        def __str__(self):
+                return &#34;Ticker Symbol: %s, Name: %s, Short Name: %s\n&#34;%(self.__ticker_symbol, self.__name, self.__short_name) 
+
+        def to_df(self):
+                &#34;&#34;&#34;
+                Convert the Currency object as a single-row Pandas DataFrame object.
+                
+                Returns
+                -------
+                Pandas.DataFrame
+                        the transformed information of the currency
+                &#34;&#34;&#34;
+                return pd.DataFrame.from_dict(self.to_dict(),orient=&#39;index&#39;).T
+
+        def to_dict(self):
+                &#34;&#34;&#34;
+                Convert the Currency object as a dictionary.
+                
+                Returns
+                -------
+                dict
+                        the transformed information of the currency
+                &#34;&#34;&#34;
+                base_dict = super().to_dict()
+                currency_dict = {&#34;name&#34;: self.name, &#34;short_name&#34;: self.short_name, &#34;base_currency&#34;: self.base_currency, &#34;quote_currency&#34;: self.quote_currency, 
+                                &#34;bid&#34;: self.bid, &#34;bid_size&#34;: self.bid_size, &#34;ask&#34;: self.ask, &#34;ask_size&#34;: self.ask_size, &#34;circulating_supply&#34;: self.circulating_supply}
+                currency_dict.update(base_dict)
+                return currency_dict
+        @property
+        def bid(self):
+                &#34;&#34;&#34;
+                Get the bid price of the Currency object.
+                
+                Returns
+                -------
+                Decimal
+                        the bid of the currency.
+                &#34;&#34;&#34;
+                return self.__bid
+        
+        @property
+        def bid_size(self):
+                &#34;&#34;&#34;
+                Get the bid size of the Currency object.
+                
+                Returns
+                -------
+                Decimal
+                        the bid size of the currency.
+                &#34;&#34;&#34;
+                return self.__bid_size
+        
+        @property
+        def ask(self):
+                &#34;&#34;&#34;
+                Get the ask price of the Currency object.
+                
+                Returns
+                -------
+                        the ask of the currency.
+                &#34;&#34;&#34;
+                return self.__ask
+        
+        @property
+        def ask_size(self):
+                &#34;&#34;&#34;
+                Get the ask size of the Currency object.
+                
+                Returns
+                -------
+                Decimal
+                        the ask size of the currency.
+                &#34;&#34;&#34;
+                return self.__ask_size
+        
+        @property
+        def base_currency(self):
+                &#34;&#34;&#34;
+                Get the base currency of the Currency object.
+                
+                Returns
+                -------
+                str
+                        the symbol of the base currency.
+                &#34;&#34;&#34;
+                return self.__base_currency
+        
+        @property
+        def quote_currency(self):
+                &#34;&#34;&#34;
+                Get the quote currency of the Currency object.
+                
+                Returns
+                -------
+                str
+                        the symbol of the quote currency.
+                &#34;&#34;&#34;
+                return self.__quote_currency
+        
+        @property
+        def circulating_supply(self):
+                &#34;&#34;&#34;
+                Get the circulation supply of the Currency object.
+                
+                Returns
+                -------
+                Decimal
+                        the supply of the currency.
+                &#34;&#34;&#34;
+                return self.__circulating_supply
+
+        @property
+        def name(self):
+                &#34;&#34;&#34;
+                Get the name of the Currency object.
+                
+                Returns
+                -------
+                str
+                        the name of the currency.
+                &#34;&#34;&#34;
+                return self.__name
+        
+        @property
+        def short_name(self):
+                &#34;&#34;&#34;
+                Get the short name of the Currency object.
+                
+                Returns
+                -------
+                str
+                        the short name of the currency.
+                &#34;&#34;&#34;
+                return self.__short_name
+        </code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="yayFinPy.currency.Currency"><code class="flex name class">
+<span>class <span class="ident">Currency</span></span>
+<span>(</span><span>ticker_symbol: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A Yahoo Finance parser for currency and cryptocurrency.</p>
+<p>This module covers the most important attributes of a currency pair:
+bid, ask, bid size, ask size, base currency, quote currency, circulating supply, name, short name;</p>
+<p>And attributes common to all Securities:
+price, opening price, closing price, volume, day high, day low, exchange, ticker symbol, quote type.</p>
+<p>For more methods on the security, refer to <code>base._BaseSecurity</code></p>
+<h2 id="methods">Methods</h2>
+<p>to_df(self)
+Convert the Currency object as a single-row Pandas DataFrame object.</p>
+<p>to_dict(self)
+Convert the Currency object as a dictionary.</p>
+<p>A typical application of this class first initialize an object with a valid ticker symbol, then use the
+class properties to extract information.</p>
+<p>Example usage:</p>
+<pre><code>    try:
+            currency = Currency("CNY=X")
+            # fetch price
+            price = currency.price
+
+            # fetch currency pair
+            base_currency = currency.base_currency
+            quote_currency = currency.quote_currency
+            print("Results: Price=%f, Base Currency=%s, Quote Currency=%s"
+                                                            %(price, base_currency, quote_currency))
+    except:
+            print("Invalid Input Ticker")
+</code></pre>
+<p>The constructor of the Currency class for initializing a Currency object.</p>
+<h2 id="parameters">Parameters</h2>
+<p>ticker_symbol :str
+A valid ticker symbol for currency or cryptocurrency.</p>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>InputError</code></dt>
+<dd>if the input ticker_symbol is not a valid Currency ticker.</dd>
+<dt><code>ParsingError</code></dt>
+<dd>if the failure occurs when parsing data using the input ticker.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Currency(_BaseSecurity):
+        &#34;&#34;&#34;
+        A Yahoo Finance parser for currency and cryptocurrency.
+
+        This module covers the most important attributes of a currency pair:
+        bid, ask, bid size, ask size, base currency, quote currency, circulating supply, name, short name;
+
+        And attributes common to all Securities:
+        price, opening price, closing price, volume, day high, day low, exchange, ticker symbol, quote type.
+
+        For more methods on the security, refer to ``base._BaseSecurity``
+
+
+        Methods
+        -------
+        to_df(self)
+                Convert the Currency object as a single-row Pandas DataFrame object.
+
+        to_dict(self)
+                Convert the Currency object as a dictionary.
+
+
+        A typical application of this class first initialize an object with a valid ticker symbol, then use the
+        class properties to extract information.
+
+        Example usage:
+                
+                try:
+                        currency = Currency(&#34;CNY=X&#34;)
+                        # fetch price
+                        price = currency.price
+
+                        # fetch currency pair
+                        base_currency = currency.base_currency
+                        quote_currency = currency.quote_currency
+                        print(&#34;Results: Price=%f, Base Currency=%s, Quote Currency=%s&#34;
+                                                                        %(price, base_currency, quote_currency))
+                except:
+                        print(&#34;Invalid Input Ticker&#34;)
+        &#34;&#34;&#34;
+
+        def __init__(self, ticker_symbol:str):
+                &#34;&#34;&#34;
+                The constructor of the Currency class for initializing a Currency object.
+                
+                Parameters
+                ----------
+                ticker_symbol :str
+                        A valid ticker symbol for currency or cryptocurrency.
+                
+                Raises
+                ------
+                InputError
+                        if the input ticker_symbol is not a valid Currency ticker.
+                ParsingError
+                        if the failure occurs when parsing data using the input ticker. 
+                &#34;&#34;&#34;
+                self.__ticker = None
+                self.__ticker_symbol = ticker_symbol
+                self.__bid = None
+                self.__bid_size = None
+                self.__ask = None
+                self.__ask_size = None
+                self.__base_currency = None
+                self.__quote_currency = None
+                self.__circulating_supply = None
+                self.__name = None
+                self.__short_name = None
+                self._init_ticker()
+
+        def _init_ticker(self):
+                
+                super().__init__(self.__ticker_symbol)
+                self.__ticker = self._BaseSecurity__security
+                
+                # ticker validation
+                quote_type = self.__ticker.info[&#39;quoteType&#39;]
+                if quote_type is QuoteType.CRYPTOCURRENCY and quote_type is QuoteType.CURRENCY:
+                        raise InputError(&#34;Invalid Ticker Symbol for Currency&#34;, &#34;Input Ticker &#34; + self.__ticker_symbol)
+
+                # init currency class
+                try:
+                        self.__bid = Decimal(&#39;NaN&#39;) if not self.__ticker.info[&#39;bid&#39;] else Decimal(self.__ticker.info[&#39;bid&#39;])
+                        self.__bid_size = Decimal(&#39;NaN&#39;) if not self.__ticker.info[&#39;bidSize&#39;] else Decimal(self.__ticker.info[&#39;bidSize&#39;])
+                        self.__ask = Decimal(&#39;NaN&#39;) if not self.__ticker.info[&#39;ask&#39;] else Decimal(self.__ticker.info[&#39;ask&#39;])
+                        self.__ask_size = Decimal(&#39;NaN&#39;) if not self.__ticker.info[&#39;askSize&#39;] else Decimal(self.__ticker.info[&#39;askSize&#39;])
+                        self.__circulating_supply = Decimal(&#39;NaN&#39;) if not self.__ticker.info[&#39;circulatingSupply&#39;] else Decimal(self.__ticker.info[&#39;circulatingSupply&#39;])
+                        self.__short_name = self.__ticker.info[&#39;shortName&#39;]
+                        self.__name = self.__short_name if &#39;name&#39; not in self.__ticker.info else self.__ticker.info[&#39;name&#39;]  
+                        self.__base_currency = self.__short_name.split(&#34;/&#34;)[0] if &#39;/&#39; in self.__short_name else self.__short_name.split(&#34; &#34;)[1]
+                        self.__quote_currency = self.__short_name.split(&#34;/&#34;)[1] if &#39;/&#39; in self.__short_name else self.__short_name.split(&#34; &#34;)[0]
+                except Exception as e:
+                        raise ParsingError(self.__ticker_symbol, &#34;Failed to parse data. &#34; + e)
+        
+
+        def __str__(self):
+                return &#34;Ticker Symbol: %s, Name: %s, Short Name: %s\n&#34;%(self.__ticker_symbol, self.__name, self.__short_name) 
+
+        def to_df(self):
+                &#34;&#34;&#34;
+                Convert the Currency object as a single-row Pandas DataFrame object.
+                
+                Returns
+                -------
+                Pandas.DataFrame
+                        the transformed information of the currency
+                &#34;&#34;&#34;
+                return pd.DataFrame.from_dict(self.to_dict(),orient=&#39;index&#39;).T
+
+        def to_dict(self):
+                &#34;&#34;&#34;
+                Convert the Currency object as a dictionary.
+                
+                Returns
+                -------
+                dict
+                        the transformed information of the currency
+                &#34;&#34;&#34;
+                base_dict = super().to_dict()
+                currency_dict = {&#34;name&#34;: self.name, &#34;short_name&#34;: self.short_name, &#34;base_currency&#34;: self.base_currency, &#34;quote_currency&#34;: self.quote_currency, 
+                                &#34;bid&#34;: self.bid, &#34;bid_size&#34;: self.bid_size, &#34;ask&#34;: self.ask, &#34;ask_size&#34;: self.ask_size, &#34;circulating_supply&#34;: self.circulating_supply}
+                currency_dict.update(base_dict)
+                return currency_dict
+        @property
+        def bid(self):
+                &#34;&#34;&#34;
+                Get the bid price of the Currency object.
+                
+                Returns
+                -------
+                Decimal
+                        the bid of the currency.
+                &#34;&#34;&#34;
+                return self.__bid
+        
+        @property
+        def bid_size(self):
+                &#34;&#34;&#34;
+                Get the bid size of the Currency object.
+                
+                Returns
+                -------
+                Decimal
+                        the bid size of the currency.
+                &#34;&#34;&#34;
+                return self.__bid_size
+        
+        @property
+        def ask(self):
+                &#34;&#34;&#34;
+                Get the ask price of the Currency object.
+                
+                Returns
+                -------
+                        the ask of the currency.
+                &#34;&#34;&#34;
+                return self.__ask
+        
+        @property
+        def ask_size(self):
+                &#34;&#34;&#34;
+                Get the ask size of the Currency object.
+                
+                Returns
+                -------
+                Decimal
+                        the ask size of the currency.
+                &#34;&#34;&#34;
+                return self.__ask_size
+        
+        @property
+        def base_currency(self):
+                &#34;&#34;&#34;
+                Get the base currency of the Currency object.
+                
+                Returns
+                -------
+                str
+                        the symbol of the base currency.
+                &#34;&#34;&#34;
+                return self.__base_currency
+        
+        @property
+        def quote_currency(self):
+                &#34;&#34;&#34;
+                Get the quote currency of the Currency object.
+                
+                Returns
+                -------
+                str
+                        the symbol of the quote currency.
+                &#34;&#34;&#34;
+                return self.__quote_currency
+        
+        @property
+        def circulating_supply(self):
+                &#34;&#34;&#34;
+                Get the circulation supply of the Currency object.
+                
+                Returns
+                -------
+                Decimal
+                        the supply of the currency.
+                &#34;&#34;&#34;
+                return self.__circulating_supply
+
+        @property
+        def name(self):
+                &#34;&#34;&#34;
+                Get the name of the Currency object.
+                
+                Returns
+                -------
+                str
+                        the name of the currency.
+                &#34;&#34;&#34;
+                return self.__name
+        
+        @property
+        def short_name(self):
+                &#34;&#34;&#34;
+                Get the short name of the Currency object.
+                
+                Returns
+                -------
+                str
+                        the short name of the currency.
+                &#34;&#34;&#34;
+                return self.__short_name</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="yayFinPy.currency.Currency.ask"><code class="name">var <span class="ident">ask</span></code></dt>
+<dd>
+<div class="desc"><p>Get the ask price of the Currency object.</p>
+<h2 id="returns">Returns</h2>
+<pre><code>    the ask of the currency.
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ask(self):
+        &#34;&#34;&#34;
+        Get the ask price of the Currency object.
+        
+        Returns
+        -------
+                the ask of the currency.
+        &#34;&#34;&#34;
+        return self.__ask</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.ask_size"><code class="name">var <span class="ident">ask_size</span></code></dt>
+<dd>
+<div class="desc"><p>Get the ask size of the Currency object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>the ask size of the currency.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ask_size(self):
+        &#34;&#34;&#34;
+        Get the ask size of the Currency object.
+        
+        Returns
+        -------
+        Decimal
+                the ask size of the currency.
+        &#34;&#34;&#34;
+        return self.__ask_size</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.base_currency"><code class="name">var <span class="ident">base_currency</span></code></dt>
+<dd>
+<div class="desc"><p>Get the base currency of the Currency object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>the symbol of the base currency.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def base_currency(self):
+        &#34;&#34;&#34;
+        Get the base currency of the Currency object.
+        
+        Returns
+        -------
+        str
+                the symbol of the base currency.
+        &#34;&#34;&#34;
+        return self.__base_currency</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.bid"><code class="name">var <span class="ident">bid</span></code></dt>
+<dd>
+<div class="desc"><p>Get the bid price of the Currency object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>the bid of the currency.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def bid(self):
+        &#34;&#34;&#34;
+        Get the bid price of the Currency object.
+        
+        Returns
+        -------
+        Decimal
+                the bid of the currency.
+        &#34;&#34;&#34;
+        return self.__bid</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.bid_size"><code class="name">var <span class="ident">bid_size</span></code></dt>
+<dd>
+<div class="desc"><p>Get the bid size of the Currency object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>the bid size of the currency.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def bid_size(self):
+        &#34;&#34;&#34;
+        Get the bid size of the Currency object.
+        
+        Returns
+        -------
+        Decimal
+                the bid size of the currency.
+        &#34;&#34;&#34;
+        return self.__bid_size</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.circulating_supply"><code class="name">var <span class="ident">circulating_supply</span></code></dt>
+<dd>
+<div class="desc"><p>Get the circulation supply of the Currency object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>the supply of the currency.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def circulating_supply(self):
+        &#34;&#34;&#34;
+        Get the circulation supply of the Currency object.
+        
+        Returns
+        -------
+        Decimal
+                the supply of the currency.
+        &#34;&#34;&#34;
+        return self.__circulating_supply</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.closing_price"><code class="name">var <span class="ident">closing_price</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.closing_price" href="base.html#yayFinPy.base._BaseSecurity.closing_price">closing_price</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the closing market price of security.</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.day_high"><code class="name">var <span class="ident">day_high</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.day_high" href="base.html#yayFinPy.base._BaseSecurity.day_high">day_high</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the day's highest market price of security.</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.day_low"><code class="name">var <span class="ident">day_low</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.day_low" href="base.html#yayFinPy.base._BaseSecurity.day_low">day_low</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the day's lowest market price of security.</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.exchange"><code class="name">var <span class="ident">exchange</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.exchange" href="base.html#yayFinPy.base._BaseSecurity.exchange">exchange</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>str
+returns the exchange in which security is being traded.</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"><p>Get the name of the Currency object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>the name of the currency.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def name(self):
+        &#34;&#34;&#34;
+        Get the name of the Currency object.
+        
+        Returns
+        -------
+        str
+                the name of the currency.
+        &#34;&#34;&#34;
+        return self.__name</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.opening_price"><code class="name">var <span class="ident">opening_price</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.opening_price" href="base.html#yayFinPy.base._BaseSecurity.opening_price">opening_price</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the opening market price of security.</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.price"><code class="name">var <span class="ident">price</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.price" href="base.html#yayFinPy.base._BaseSecurity.price">price</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the current regular market price of the security.</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.quote_currency"><code class="name">var <span class="ident">quote_currency</span></code></dt>
+<dd>
+<div class="desc"><p>Get the quote currency of the Currency object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>the symbol of the quote currency.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def quote_currency(self):
+        &#34;&#34;&#34;
+        Get the quote currency of the Currency object.
+        
+        Returns
+        -------
+        str
+                the symbol of the quote currency.
+        &#34;&#34;&#34;
+        return self.__quote_currency</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.quote_type"><code class="name">var <span class="ident">quote_type</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.quote_type" href="base.html#yayFinPy.base._BaseSecurity.quote_type">quote_type</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>QuoteType
+returns the quote type of the security. (Refer to QuoteType Enum).</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.short_name"><code class="name">var <span class="ident">short_name</span></code></dt>
+<dd>
+<div class="desc"><p>Get the short name of the Currency object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>the short name of the currency.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def short_name(self):
+        &#34;&#34;&#34;
+        Get the short name of the Currency object.
+        
+        Returns
+        -------
+        str
+                the short name of the currency.
+        &#34;&#34;&#34;
+        return self.__short_name</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.ticker_symbol"><code class="name">var <span class="ident">ticker_symbol</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.ticker_symbol" href="base.html#yayFinPy.base._BaseSecurity.ticker_symbol">ticker_symbol</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>str
+returns the ticker symbol associated with security.</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.volume"><code class="name">var <span class="ident">volume</span></code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.volume" href="base.html#yayFinPy.base._BaseSecurity.volume">volume</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Decimal
+returns the present day traded market volume of security.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="yayFinPy.currency.Currency.accumulation_distribution"><code class="name flex">
+<span>def <span class="ident">accumulation_distribution</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.accumulation_distribution" href="base.html#yayFinPy.base._BaseSecurity.accumulation_distribution">accumulation_distribution</a></code>
+</p>
+<div class="desc inherited"><p>returns the accumulation/distribution indicator (AD) indicator that uses volume and price to assess whether
+a stock is being accumulated or …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.balance_of_power"><code class="name flex">
+<span>def <span class="ident">balance_of_power</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.balance_of_power" href="base.html#yayFinPy.base._BaseSecurity.balance_of_power">balance_of_power</a></code>
+</p>
+<div class="desc inherited"><p>returns Balance Of Power (BOP) data for a given duration for a security. This indicator uses price to
+measure buying and selling pressure. It …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.bollinger_bands"><code class="name flex">
+<span>def <span class="ident">bollinger_bands</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7, dev_up=Multiplier.TWICE, dev_down=Multiplier.TWICE)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.bollinger_bands" href="base.html#yayFinPy.base._BaseSecurity.bollinger_bands">bollinger_bands</a></code>
+</p>
+<div class="desc inherited"><p>returns upperband, middleband, lowerband for price of a security averaged on timeperiod for given duration.
+and deviation multiples …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.commodity_channel_index"><code class="name flex">
+<span>def <span class="ident">commodity_channel_index</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.commodity_channel_index" href="base.html#yayFinPy.base._BaseSecurity.commodity_channel_index">commodity_channel_index</a></code>
+</p>
+<div class="desc inherited"><p>returns the CCI market indicator used to track market movements that may indicate buying or selling.
+CCI is calculated with the following formula: …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.download_data"><code class="name flex">
+<span>def <span class="ident">download_data</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, interval: <a title="yayFinPy.enumerations.Interval" href="enumerations.html#yayFinPy.enumerations.Interval">Interval</a> = Interval.DAY_1, start: datetime.date = None, end: datetime.date = None, threads: bool = False)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.download_data" href="base.html#yayFinPy.base._BaseSecurity.download_data">download_data</a></code>
+</p>
+<div class="desc inherited"><p>downloads price, volume data for a security …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.historical_data"><code class="name flex">
+<span>def <span class="ident">historical_data</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, interval: <a title="yayFinPy.enumerations.Interval" href="enumerations.html#yayFinPy.enumerations.Interval">Interval</a> = Interval.DAY_1)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.historical_data" href="base.html#yayFinPy.base._BaseSecurity.historical_data">historical_data</a></code>
+</p>
+<div class="desc inherited"><p>Returns</p>
+<p>Pandas.Dataframe
+returns price, volume data for a security …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.linear_regression"><code class="name flex">
+<span>def <span class="ident">linear_regression</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.linear_regression" href="base.html#yayFinPy.base._BaseSecurity.linear_regression">linear_regression</a></code>
+</p>
+<div class="desc inherited"><p>returns Linear Regression Indicator used for trend identification and trend following in a similar to moving averages.
+It has advantage of having less …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.moving_average"><code class="name flex">
+<span>def <span class="ident">moving_average</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.moving_average" href="base.html#yayFinPy.base._BaseSecurity.moving_average">moving_average</a></code>
+</p>
+<div class="desc inherited"><p>returns moving average price for a security averaged on timeperiod for given duration …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.rate_of_change_ratio"><code class="name flex">
+<span>def <span class="ident">rate_of_change_ratio</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.rate_of_change_ratio" href="base.html#yayFinPy.base._BaseSecurity.rate_of_change_ratio">rate_of_change_ratio</a></code>
+</p>
+<div class="desc inherited"><p>returns rate of change of ratio (price/previous price) averaged on timeperiod for a given duration …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.relative_strength_index"><code class="name flex">
+<span>def <span class="ident">relative_strength_index</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.relative_strength_index" href="base.html#yayFinPy.base._BaseSecurity.relative_strength_index">relative_strength_index</a></code>
+</p>
+<div class="desc inherited"><p>returns relative strength index averaged on timeperiod for a given duration. It measures the magnitude of recent
+price changes to evaluate overbought …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.standard_deviation"><code class="name flex">
+<span>def <span class="ident">standard_deviation</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7, dev=Multiplier.ONCE)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.standard_deviation" href="base.html#yayFinPy.base._BaseSecurity.standard_deviation">standard_deviation</a></code>
+</p>
+<div class="desc inherited"><p>returns the Standard deviation indicator which is the statistical measure of market volatility,
+measuring how widely prices are dispersed from the …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.time_series_forecast"><code class="name flex">
+<span>def <span class="ident">time_series_forecast</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.time_series_forecast" href="base.html#yayFinPy.base._BaseSecurity.time_series_forecast">time_series_forecast</a></code>
+</p>
+<div class="desc inherited"><p>returns Time Series Forecast (TSF) indicator, which is based on a linear regression technique that uses the
+least squares method to fit a straight …</p></div>
+</dd>
+<dt id="yayFinPy.currency.Currency.to_df"><code class="name flex">
+<span>def <span class="ident">to_df</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert the Currency object as a single-row Pandas DataFrame object.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Pandas.DataFrame</code></dt>
+<dd>the transformed information of the currency</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_df(self):
+        &#34;&#34;&#34;
+        Convert the Currency object as a single-row Pandas DataFrame object.
+        
+        Returns
+        -------
+        Pandas.DataFrame
+                the transformed information of the currency
+        &#34;&#34;&#34;
+        return pd.DataFrame.from_dict(self.to_dict(),orient=&#39;index&#39;).T</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert the Currency object as a dictionary.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>the transformed information of the currency</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self):
+        &#34;&#34;&#34;
+        Convert the Currency object as a dictionary.
+        
+        Returns
+        -------
+        dict
+                the transformed information of the currency
+        &#34;&#34;&#34;
+        base_dict = super().to_dict()
+        currency_dict = {&#34;name&#34;: self.name, &#34;short_name&#34;: self.short_name, &#34;base_currency&#34;: self.base_currency, &#34;quote_currency&#34;: self.quote_currency, 
+                        &#34;bid&#34;: self.bid, &#34;bid_size&#34;: self.bid_size, &#34;ask&#34;: self.ask, &#34;ask_size&#34;: self.ask_size, &#34;circulating_supply&#34;: self.circulating_supply}
+        currency_dict.update(base_dict)
+        return currency_dict</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.currency.Currency.variance"><code class="name flex">
+<span>def <span class="ident">variance</span></span>(<span>self, duration: <a title="yayFinPy.enumerations.Duration" href="enumerations.html#yayFinPy.enumerations.Duration">Duration</a> = Duration.MONTH_1, timeperiod=7, dev=Multiplier.ONCE)</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="yayFinPy.base._BaseSecurity" href="base.html#yayFinPy.base._BaseSecurity">_BaseSecurity</a></code>.<code><a title="yayFinPy.base._BaseSecurity.variance" href="base.html#yayFinPy.base._BaseSecurity.variance">variance</a></code>
+</p>
+<div class="desc inherited"><p>returns Variance indicator which is the statistical measure of market volatility, obtained by squaring the
+standard deviation …</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="yayFinPy" href="index.html">yayFinPy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="yayFinPy.currency.Currency" href="#yayFinPy.currency.Currency">Currency</a></code></h4>
+<ul class="">
+<li><code><a title="yayFinPy.currency.Currency.accumulation_distribution" href="base.html#yayFinPy.currency.Currency.accumulation_distribution">accumulation_distribution</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.ask" href="#yayFinPy.currency.Currency.ask">ask</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.ask_size" href="#yayFinPy.currency.Currency.ask_size">ask_size</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.balance_of_power" href="base.html#yayFinPy.currency.Currency.balance_of_power">balance_of_power</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.base_currency" href="#yayFinPy.currency.Currency.base_currency">base_currency</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.bid" href="#yayFinPy.currency.Currency.bid">bid</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.bid_size" href="#yayFinPy.currency.Currency.bid_size">bid_size</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.bollinger_bands" href="base.html#yayFinPy.currency.Currency.bollinger_bands">bollinger_bands</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.circulating_supply" href="#yayFinPy.currency.Currency.circulating_supply">circulating_supply</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.closing_price" href="base.html#yayFinPy.currency.Currency.closing_price">closing_price</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.commodity_channel_index" href="base.html#yayFinPy.currency.Currency.commodity_channel_index">commodity_channel_index</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.day_high" href="base.html#yayFinPy.currency.Currency.day_high">day_high</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.day_low" href="base.html#yayFinPy.currency.Currency.day_low">day_low</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.download_data" href="base.html#yayFinPy.currency.Currency.download_data">download_data</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.exchange" href="base.html#yayFinPy.currency.Currency.exchange">exchange</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.historical_data" href="base.html#yayFinPy.currency.Currency.historical_data">historical_data</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.linear_regression" href="base.html#yayFinPy.currency.Currency.linear_regression">linear_regression</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.moving_average" href="base.html#yayFinPy.currency.Currency.moving_average">moving_average</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.name" href="#yayFinPy.currency.Currency.name">name</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.opening_price" href="base.html#yayFinPy.currency.Currency.opening_price">opening_price</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.price" href="base.html#yayFinPy.currency.Currency.price">price</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.quote_currency" href="#yayFinPy.currency.Currency.quote_currency">quote_currency</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.quote_type" href="base.html#yayFinPy.currency.Currency.quote_type">quote_type</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.rate_of_change_ratio" href="base.html#yayFinPy.currency.Currency.rate_of_change_ratio">rate_of_change_ratio</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.relative_strength_index" href="base.html#yayFinPy.currency.Currency.relative_strength_index">relative_strength_index</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.short_name" href="#yayFinPy.currency.Currency.short_name">short_name</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.standard_deviation" href="base.html#yayFinPy.currency.Currency.standard_deviation">standard_deviation</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.ticker_symbol" href="base.html#yayFinPy.currency.Currency.ticker_symbol">ticker_symbol</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.time_series_forecast" href="base.html#yayFinPy.currency.Currency.time_series_forecast">time_series_forecast</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.to_df" href="#yayFinPy.currency.Currency.to_df">to_df</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.to_dict" href="#yayFinPy.currency.Currency.to_dict">to_dict</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.variance" href="base.html#yayFinPy.currency.Currency.variance">variance</a></code></li>
+<li><code><a title="yayFinPy.currency.Currency.volume" href="base.html#yayFinPy.currency.Currency.volume">volume</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

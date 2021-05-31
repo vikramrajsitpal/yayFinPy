@@ -1,0 +1,1444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>yayFinPy.portfolio API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>yayFinPy.portfolio</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# 
+# Part of academic course project at CMU in the course API Design and 
+# Implementation - 17780 by Josh Bloch and Charlie Garrod.
+# 
+# Author:
+# - Vikramraj Sitpal
+# - Tianyang Zhan
+
+from .misc import Misc
+from .etf import ETF
+from .stock import Stock
+from .mutual_fund import MutualFund
+from .treasury_bonds import TreasuryBond
+from .currency import Currency
+from .exceptions import *
+from .enumerations import *
+from decimal import *
+from datetime import date
+from decimal import Decimal
+import yfinance as yf
+import pandas as pd
+from numpy import NaN as nan
+from collections import namedtuple, OrderedDict
+
+
+PortfolioInfo = namedtuple(&#39;PortfolioInfo&#39;, [&#39;qty&#39;, &#39;buying_price&#39;])
+PortfolioInfo.__doc__ = &#34;&#34;&#34;
+Named Tuple PortfolioInfo
+qty -&gt; Quantity of the Security in portfolio
+buying_price -&gt; buying price of the security in portfolio
+&#34;&#34;&#34;
+
+
+class Portfolio():
+    &#34;&#34;&#34;
+    A Portfolio class exposed as a module to create and analyse a custom
+    portfolio. It can take any valid security type as input.
+
+    This is the only mutable class in the entire API as someone&#39;s Portfolio
+    can keep changing.
+
+    One can initialise a Portfolio object using a pre-defined dictionary 
+    format or can call the methods to add securities one by one.
+
+    A Portfolio, in simple terms, is a group of securities which has a value
+    equal to combined value of all its component securities.
+
+    Note: qty -&gt; Quantity
+
+        Methods
+        -------
+        diversification(self)
+        Shows diversification within the Portfolio
+
+        as_dataframe(self)
+        Returns the Portfolio information as pandas DataFrame
+
+    add_to_portfolio(self, ticker: str, qty: Decimal, buying_price: Decimal = None)
+        Adds a security to portfolio
+
+    remove_from_portfolio(self, ticker: str)
+        Removes a security from portfolio
+
+    update_qty(self, ticker: str, new_qty: Decimal)
+        Updates the quantity of a particular security
+
+    update_buying_price(self, ticker: str, buying_price: Decimal)
+        Updated buying prices of a particular security
+
+    returns(self)
+        Returns the current gain/loss (if negative) based on buying price
+        and the current value of the Portfolio
+
+    value(self)
+        Returns the total value of the Portfolio
+
+    get_portfolio_objects(self)
+        Returns individual objects of the security on which more analysis can
+        be done
+
+    get_portfolio_info(self)
+        Returns Portfolio information as a dictionary in a specific format as
+        was taken in input
+
+        Example usage:
+                
+        portfolio = Portfolio({&#34;BTC-USD&#34;: PortfolioInfo(qty=Decimal(1), buying_price=Decimal(50000)), &#34;JPY=X&#34;: PortfolioInfo(qty=Decimal(1), buying_price=Decimal(10))})
+
+        returns = portfolio.returns()
+                value = portfolio.value()
+
+        assets = portfolio.get_portfolio_objects()
+
+        portfolio.update_qty(&#34;BTC-USD&#34;, Decimal(2))
+                portfolio.update_buying_price(&#34;BTC-USD&#34;, Decimal(47000))
+                p_info = portfolio.get_portfolio_info()
+
+        portfolio.remove_from_portfolio(&#34;JPY=X&#34;)
+
+    &#34;&#34;&#34;
+
+    def __init__(self, tkr_qty_bp: dict = None):
+        &#34;&#34;&#34;
+        The constructor of the Portfolio class for initializing a Portfolio object.
+
+        Creates new Data structures.
+        Parameters
+                ----------
+                tkr_qty_bp :dict, optional
+                        A valid dictionary with:
+                key: str -&gt; ticker
+                value: (quantity: Decimal, buying price: Decimal) PortfolioInfo
+                named tuple
+                
+                Raises
+                ------
+                InputError
+                        if the input key in the dict is not a valid ticker.
+                ParsingError
+                        if the failure occurs when parsing data using the input dict. 
+        &#34;&#34;&#34;
+        self.__portfolio = dict()
+        self.__portfolio_objs = dict()
+        self.__portfolio_bp = dict()
+        
+        if tkr_qty_bp:
+            for t, ps in tkr_qty_bp.items():
+                self.add_to_portfolio(t, ps.qty, ps.buying_price)
+        
+
+    def __str__(self):
+        &#34;&#34;&#34;
+        Returns
+        -------
+        str
+            Print the Portfolio as string
+        &#34;&#34;&#34;
+
+        s = &#34;Security\tType\Quantity\tBuying Price\n=====================================================\n&#34;
+
+
+        for t, o in self.__portfolio.items():
+            s += t + &#34;\t&#34;
+            s += self.__portfolio_objs[t].quote_type.value + &#34;\t&#34;
+            s += str(o) + &#34;\t&#34;
+            if self.__portfolio_bp[t] is None:
+                s += &#34;NA\t&#34;
+            else:
+                s += str(self.__portfolio_bp[t]) + &#34;\n&#34;
+
+        return s
+
+    def diversification(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Returns
+        -------
+        pandas.DataFrame
+            Shows how diverse the portfolio is based on the data.
+            Calculates the percentage per security group as per its current value wrt the entire portfolio.
+            Serves to show well as well as be used as data-structure to use
+            values.
+        &#34;&#34;&#34;
+        df_dict = OrderedDict()
+        df_dict[&#34;Security Type&#34;] = []
+        df_dict[&#34;Current Value&#34;] = []
+        for t, val in self.__portfolio_objs.items():
+            df_dict[&#34;Security Type&#34;].append(val.quote_type.value)
+            df_dict[&#34;Current Value&#34;].append(val.price * self.__portfolio[t])
+        
+        df = pd.DataFrame(df_dict)
+        df_sum = df.groupby([&#34;Security Type&#34;]).agg({&#39;Current Value&#39;: &#39;sum&#39;})
+
+        df_sum[&#34;Percentage&#34;] = 100 * df_sum[&#34;Current Value&#34;] / df_sum[&#34;Current Value&#34;].sum()
+        return df_sum
+
+
+    def as_dataframe(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Returns
+        -------
+        pandas.DataFrame
+            pandas dataframe with portfolio info as table
+            Serves to print well as well as be used as data-structure to extract
+            values.
+        &#34;&#34;&#34;
+
+        df_dict = OrderedDict()
+        df_dict[&#34;Ticker Symbol&#34;] = []
+        df_dict[&#34;Security Type&#34;] = []
+        df_dict[&#34;Buying Price&#34;] = []
+        df_dict[&#34;Quantity&#34;] = []
+        df_dict[&#34;Value&#34;] = []
+
+        for t, val in self.__portfolio_objs.items():
+            df_dict[&#34;Ticker Symbol&#34;].append(t)
+            df_dict[&#34;Security Type&#34;].append(val.quote_type.value)
+            if self.__portfolio_bp[t] is None:
+                df_dict[&#34;Buying Price&#34;].append(nan)
+            else:
+                df_dict[&#34;Buying Price&#34;].append(self.__portfolio_bp[t])
+            df_dict[&#34;Quantity&#34;].append(self.__portfolio[t])
+            df_dict[&#34;Value&#34;].append(val.price * self.__portfolio[t])
+        
+        df = pd.DataFrame(df_dict)
+        return df
+
+    def add_to_portfolio(self, ticker: str, qty: Decimal, 
+        buying_price: Decimal = None):
+        &#34;&#34;&#34;
+        Adds given security to the Portfolio with given qty owned
+
+        Parameters
+        ----------
+        ticker: str
+            The security as ticker symbol
+        qty: Decimal
+            Amount of the security owned
+        buying_price: Decimal, optional
+            Not used mandatorily to initialise the security in a portfolio.
+            May choose to mention now add later if needs to see returns
+        &#34;&#34;&#34;
+        if not isinstance(ticker, str):
+            raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+
+        if ticker in self.__portfolio:
+            raise InputError(&#34;Ticker exists&#34;, &#34;Input Ticker &#34; + ticker)
+        
+        if not isinstance(qty, Decimal):
+            raise ParsingError(&#34;Invalid qty type&#34;,&#34;expected type &#39;Decimal&#39;&#34;)
+
+        security = yf.Ticker(ticker)
+
+        if &#39;quoteType&#39; in security.info:
+            if security.info[&#39;quoteType&#39;] in QuoteType._value2member_map_:
+                quote_type = QuoteType(security.info[&#39;quoteType&#39;])
+            else:
+                quote_type = QuoteType.MISC
+        else:
+            raise InputError(&#34;Invalid Ticker Symbol&#34;, &#34;Input Ticker &#34; + ticker)
+
+        if qty &lt; Decimal(0):
+            raise InputError(&#34;Invalid qty&#34;, &#34;Input Ticker &#34; + ticker)
+
+        if buying_price is not None:
+            if not isinstance(buying_price, Decimal):
+                raise ParsingError(&#34;Invalid buying_price type&#34;,&#34;expected type &#39;Decimal&#39;&#34;)
+
+            if buying_price &lt; Decimal(0):
+                 raise InputError(&#34;Invalid buying price&#34;, &#34;Input Ticker &#34; + ticker)
+            
+        
+        self.__portfolio_bp[ticker] = buying_price 
+        self.__portfolio[ticker] = qty
+
+        if quote_type == QuoteType.EQUITY:
+            security = Stock(ticker)
+        elif quote_type == QuoteType.ETF:
+            security = ETF(ticker)
+        elif (quote_type == QuoteType.CRYPTOCURRENCY or quote_type == QuoteType.CURRENCY):
+            security = Currency(ticker)
+        elif quote_type == QuoteType.INDEX:
+            security = TreasuryBond(ticker)
+        elif quote_type == QuoteType.MUTUALFUND:
+            security = MutualFund(ticker)
+        else:
+            security = Misc(ticker)
+        
+       
+        self.__portfolio_objs[ticker] = security
+        
+
+    
+
+    def remove_from_portfolio(self, ticker: str):
+        &#34;&#34;&#34;
+        Removes given security from the Portfolio
+
+        Parameters
+        ----------
+        ticker: str
+            The security as ticker symbol
+        &#34;&#34;&#34;
+
+        if not isinstance(ticker, str):
+            raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+
+        if ticker not in self.__portfolio:
+            raise InputError(&#34;Ticker Symbol not in Portfolio&#34;, &#34;Input Ticker &#34; + ticker)
+
+        else:
+            del self.__portfolio[ticker]
+            del self.__portfolio_objs[ticker]
+            del self.__portfolio_bp[ticker]
+
+
+    def update_qty(self, ticker: str, new_qty: Decimal):
+        &#34;&#34;&#34;
+        Updates qty owned for a given security
+
+        Parameters
+        ----------
+        ticker: str
+            The security as ticker symbol
+        new_qty: Decimal
+            new qty which is owned in this Portfolio
+        &#34;&#34;&#34;
+
+        if not isinstance(ticker, str):
+            raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+
+        if not isinstance(new_qty, Decimal):
+            raise ParsingError(&#34;Invalid qty type&#34;,&#34;expected type &#39;Decimal&#39;&#34;)
+        
+        if ticker not in self.__portfolio:
+            raise InputError(&#34;Ticker Symbol not in Portfolio&#34;, &#34;Input Ticker &#34; + ticker)
+
+        if (Decimal(0) &gt; new_qty):
+                raise InputError(&#34;Invalid qty&#34;, &#34;Needs to be &gt;= 0&#34;)
+        
+        else:
+            self.__portfolio[ticker] = new_qty
+
+
+    def update_buying_price(self, ticker: str, buying_price: Decimal):
+        &#34;&#34;&#34;
+        Updates buying price at which a given security was bought
+
+        Parameters
+        ----------
+        ticker: str
+            The security as ticker symbol
+        buying_price: Decimal
+            new buying price
+        &#34;&#34;&#34;
+
+        if not isinstance(ticker, str):
+            raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+    
+        if ticker not in self.__portfolio:
+            raise InputError(&#34;Ticker Symbol not in Portfolio&#34;, &#34;Input Ticker &#34; + ticker)
+
+        if (Decimal(0) &gt; buying_price):
+                raise InputError(&#34;Invalid buying_price&#34;, &#34;Needs to be &gt;= 0&#34;)
+
+        self.__portfolio_bp[ticker] = buying_price
+        
+
+    def returns(self) -&gt; Decimal:
+        &#34;&#34;&#34;
+        Get the monetary returns on the Portfolio.
+        
+        Returns
+        -------
+        Decimal
+            the returns of the Portfolio, calculated as:
+            Current value of the portfolio - total buying price of the portfolio
+        &#34;&#34;&#34;
+        if not self.__portfolio:
+            return Decimal(0)
+        
+        val = self.value()
+
+        buy_price = sum(self.__portfolio_bp.values())
+
+        rets = val - buy_price
+
+        return rets
+
+    def value(self) -&gt; Decimal:
+        &#34;&#34;&#34;
+        Get the value of the Portfolio.
+        
+        Returns
+        -------
+        Decimal
+            the value of the Portfolio calculated as:
+            Today&#39;s price of the security * qty owned in Portfolio
+        &#34;&#34;&#34;
+        if not self.__portfolio:
+            return Decimal(0)
+
+        val = Decimal(0)
+
+        for t, o in self.__portfolio_objs.items():
+            val += (o.price * self.__portfolio[t])
+        
+        return val
+                
+
+    def get_portfolio_objects(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Get the information of the security object(s) which Portfolio contains.
+        
+        Returns
+        -------
+        dict
+            key: Ticker, value: security object
+        &#34;&#34;&#34;
+        if not self.__portfolio_objs:
+            return dict()
+        
+        else:
+            return self.__portfolio_objs
+    
+    def get_portfolio_info(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Get the information on buying price and qty which Portfolio contains.
+        
+        Returns
+        -------
+        dict
+            key: Ticker, value: PortfolioInfo named tuple
+        &#34;&#34;&#34;
+        if not self.__portfolio_objs:
+            return dict()
+        
+        else:
+            ret_dict = dict()
+            for t, o in self.__portfolio.items():
+                ret_dict[t] = PortfolioInfo(qty=o, buying_price=self.__portfolio_bp[t])
+            
+            return ret_dict</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="yayFinPy.portfolio.Portfolio"><code class="flex name class">
+<span>class <span class="ident">Portfolio</span></span>
+<span>(</span><span>tkr_qty_bp: dict = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A Portfolio class exposed as a module to create and analyse a custom
+portfolio. It can take any valid security type as input.</p>
+<p>This is the only mutable class in the entire API as someone's Portfolio
+can keep changing.</p>
+<p>One can initialise a Portfolio object using a pre-defined dictionary
+format or can call the methods to add securities one by one.</p>
+<p>A Portfolio, in simple terms, is a group of securities which has a value
+equal to combined value of all its component securities.</p>
+<p>Note: qty -&gt; Quantity</p>
+<pre><code>Methods
+-------
+diversification(self)
+Shows diversification within the Portfolio
+
+as_dataframe(self)
+Returns the Portfolio information as pandas DataFrame
+</code></pre>
+<p>add_to_portfolio(self, ticker: str, qty: Decimal, buying_price: Decimal = None)
+Adds a security to portfolio</p>
+<p>remove_from_portfolio(self, ticker: str)
+Removes a security from portfolio</p>
+<p>update_qty(self, ticker: str, new_qty: Decimal)
+Updates the quantity of a particular security</p>
+<p>update_buying_price(self, ticker: str, buying_price: Decimal)
+Updated buying prices of a particular security</p>
+<p>returns(self)
+Returns the current gain/loss (if negative) based on buying price
+and the current value of the Portfolio</p>
+<p>value(self)
+Returns the total value of the Portfolio</p>
+<p>get_portfolio_objects(self)
+Returns individual objects of the security on which more analysis can
+be done</p>
+<p>get_portfolio_info(self)
+Returns Portfolio information as a dictionary in a specific format as
+was taken in input</p>
+<pre><code>Example usage:
+
+portfolio = Portfolio({"BTC-USD": PortfolioInfo(qty=Decimal(1), buying_price=Decimal(50000)), "JPY=X": PortfolioInfo(qty=Decimal(1), buying_price=Decimal(10))})
+
+returns = portfolio.returns()
+        value = portfolio.value()
+
+assets = portfolio.get_portfolio_objects()
+
+portfolio.update_qty("BTC-USD", Decimal(2))
+        portfolio.update_buying_price("BTC-USD", Decimal(47000))
+        p_info = portfolio.get_portfolio_info()
+
+portfolio.remove_from_portfolio("JPY=X")
+</code></pre>
+<p>The constructor of the Portfolio class for initializing a Portfolio object.</p>
+<p>Creates new Data structures.
+Parameters
+----------
+tkr_qty_bp :dict, optional
+A valid dictionary with:
+key: str -&gt; ticker
+value: (quantity: Decimal, buying price: Decimal) PortfolioInfo
+named tuple</p>
+<pre><code>    Raises
+    ------
+    InputError
+            if the input key in the dict is not a valid ticker.
+    ParsingError
+            if the failure occurs when parsing data using the input dict.
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Portfolio():
+    &#34;&#34;&#34;
+    A Portfolio class exposed as a module to create and analyse a custom
+    portfolio. It can take any valid security type as input.
+
+    This is the only mutable class in the entire API as someone&#39;s Portfolio
+    can keep changing.
+
+    One can initialise a Portfolio object using a pre-defined dictionary 
+    format or can call the methods to add securities one by one.
+
+    A Portfolio, in simple terms, is a group of securities which has a value
+    equal to combined value of all its component securities.
+
+    Note: qty -&gt; Quantity
+
+        Methods
+        -------
+        diversification(self)
+        Shows diversification within the Portfolio
+
+        as_dataframe(self)
+        Returns the Portfolio information as pandas DataFrame
+
+    add_to_portfolio(self, ticker: str, qty: Decimal, buying_price: Decimal = None)
+        Adds a security to portfolio
+
+    remove_from_portfolio(self, ticker: str)
+        Removes a security from portfolio
+
+    update_qty(self, ticker: str, new_qty: Decimal)
+        Updates the quantity of a particular security
+
+    update_buying_price(self, ticker: str, buying_price: Decimal)
+        Updated buying prices of a particular security
+
+    returns(self)
+        Returns the current gain/loss (if negative) based on buying price
+        and the current value of the Portfolio
+
+    value(self)
+        Returns the total value of the Portfolio
+
+    get_portfolio_objects(self)
+        Returns individual objects of the security on which more analysis can
+        be done
+
+    get_portfolio_info(self)
+        Returns Portfolio information as a dictionary in a specific format as
+        was taken in input
+
+        Example usage:
+                
+        portfolio = Portfolio({&#34;BTC-USD&#34;: PortfolioInfo(qty=Decimal(1), buying_price=Decimal(50000)), &#34;JPY=X&#34;: PortfolioInfo(qty=Decimal(1), buying_price=Decimal(10))})
+
+        returns = portfolio.returns()
+                value = portfolio.value()
+
+        assets = portfolio.get_portfolio_objects()
+
+        portfolio.update_qty(&#34;BTC-USD&#34;, Decimal(2))
+                portfolio.update_buying_price(&#34;BTC-USD&#34;, Decimal(47000))
+                p_info = portfolio.get_portfolio_info()
+
+        portfolio.remove_from_portfolio(&#34;JPY=X&#34;)
+
+    &#34;&#34;&#34;
+
+    def __init__(self, tkr_qty_bp: dict = None):
+        &#34;&#34;&#34;
+        The constructor of the Portfolio class for initializing a Portfolio object.
+
+        Creates new Data structures.
+        Parameters
+                ----------
+                tkr_qty_bp :dict, optional
+                        A valid dictionary with:
+                key: str -&gt; ticker
+                value: (quantity: Decimal, buying price: Decimal) PortfolioInfo
+                named tuple
+                
+                Raises
+                ------
+                InputError
+                        if the input key in the dict is not a valid ticker.
+                ParsingError
+                        if the failure occurs when parsing data using the input dict. 
+        &#34;&#34;&#34;
+        self.__portfolio = dict()
+        self.__portfolio_objs = dict()
+        self.__portfolio_bp = dict()
+        
+        if tkr_qty_bp:
+            for t, ps in tkr_qty_bp.items():
+                self.add_to_portfolio(t, ps.qty, ps.buying_price)
+        
+
+    def __str__(self):
+        &#34;&#34;&#34;
+        Returns
+        -------
+        str
+            Print the Portfolio as string
+        &#34;&#34;&#34;
+
+        s = &#34;Security\tType\Quantity\tBuying Price\n=====================================================\n&#34;
+
+
+        for t, o in self.__portfolio.items():
+            s += t + &#34;\t&#34;
+            s += self.__portfolio_objs[t].quote_type.value + &#34;\t&#34;
+            s += str(o) + &#34;\t&#34;
+            if self.__portfolio_bp[t] is None:
+                s += &#34;NA\t&#34;
+            else:
+                s += str(self.__portfolio_bp[t]) + &#34;\n&#34;
+
+        return s
+
+    def diversification(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Returns
+        -------
+        pandas.DataFrame
+            Shows how diverse the portfolio is based on the data.
+            Calculates the percentage per security group as per its current value wrt the entire portfolio.
+            Serves to show well as well as be used as data-structure to use
+            values.
+        &#34;&#34;&#34;
+        df_dict = OrderedDict()
+        df_dict[&#34;Security Type&#34;] = []
+        df_dict[&#34;Current Value&#34;] = []
+        for t, val in self.__portfolio_objs.items():
+            df_dict[&#34;Security Type&#34;].append(val.quote_type.value)
+            df_dict[&#34;Current Value&#34;].append(val.price * self.__portfolio[t])
+        
+        df = pd.DataFrame(df_dict)
+        df_sum = df.groupby([&#34;Security Type&#34;]).agg({&#39;Current Value&#39;: &#39;sum&#39;})
+
+        df_sum[&#34;Percentage&#34;] = 100 * df_sum[&#34;Current Value&#34;] / df_sum[&#34;Current Value&#34;].sum()
+        return df_sum
+
+
+    def as_dataframe(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Returns
+        -------
+        pandas.DataFrame
+            pandas dataframe with portfolio info as table
+            Serves to print well as well as be used as data-structure to extract
+            values.
+        &#34;&#34;&#34;
+
+        df_dict = OrderedDict()
+        df_dict[&#34;Ticker Symbol&#34;] = []
+        df_dict[&#34;Security Type&#34;] = []
+        df_dict[&#34;Buying Price&#34;] = []
+        df_dict[&#34;Quantity&#34;] = []
+        df_dict[&#34;Value&#34;] = []
+
+        for t, val in self.__portfolio_objs.items():
+            df_dict[&#34;Ticker Symbol&#34;].append(t)
+            df_dict[&#34;Security Type&#34;].append(val.quote_type.value)
+            if self.__portfolio_bp[t] is None:
+                df_dict[&#34;Buying Price&#34;].append(nan)
+            else:
+                df_dict[&#34;Buying Price&#34;].append(self.__portfolio_bp[t])
+            df_dict[&#34;Quantity&#34;].append(self.__portfolio[t])
+            df_dict[&#34;Value&#34;].append(val.price * self.__portfolio[t])
+        
+        df = pd.DataFrame(df_dict)
+        return df
+
+    def add_to_portfolio(self, ticker: str, qty: Decimal, 
+        buying_price: Decimal = None):
+        &#34;&#34;&#34;
+        Adds given security to the Portfolio with given qty owned
+
+        Parameters
+        ----------
+        ticker: str
+            The security as ticker symbol
+        qty: Decimal
+            Amount of the security owned
+        buying_price: Decimal, optional
+            Not used mandatorily to initialise the security in a portfolio.
+            May choose to mention now add later if needs to see returns
+        &#34;&#34;&#34;
+        if not isinstance(ticker, str):
+            raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+
+        if ticker in self.__portfolio:
+            raise InputError(&#34;Ticker exists&#34;, &#34;Input Ticker &#34; + ticker)
+        
+        if not isinstance(qty, Decimal):
+            raise ParsingError(&#34;Invalid qty type&#34;,&#34;expected type &#39;Decimal&#39;&#34;)
+
+        security = yf.Ticker(ticker)
+
+        if &#39;quoteType&#39; in security.info:
+            if security.info[&#39;quoteType&#39;] in QuoteType._value2member_map_:
+                quote_type = QuoteType(security.info[&#39;quoteType&#39;])
+            else:
+                quote_type = QuoteType.MISC
+        else:
+            raise InputError(&#34;Invalid Ticker Symbol&#34;, &#34;Input Ticker &#34; + ticker)
+
+        if qty &lt; Decimal(0):
+            raise InputError(&#34;Invalid qty&#34;, &#34;Input Ticker &#34; + ticker)
+
+        if buying_price is not None:
+            if not isinstance(buying_price, Decimal):
+                raise ParsingError(&#34;Invalid buying_price type&#34;,&#34;expected type &#39;Decimal&#39;&#34;)
+
+            if buying_price &lt; Decimal(0):
+                 raise InputError(&#34;Invalid buying price&#34;, &#34;Input Ticker &#34; + ticker)
+            
+        
+        self.__portfolio_bp[ticker] = buying_price 
+        self.__portfolio[ticker] = qty
+
+        if quote_type == QuoteType.EQUITY:
+            security = Stock(ticker)
+        elif quote_type == QuoteType.ETF:
+            security = ETF(ticker)
+        elif (quote_type == QuoteType.CRYPTOCURRENCY or quote_type == QuoteType.CURRENCY):
+            security = Currency(ticker)
+        elif quote_type == QuoteType.INDEX:
+            security = TreasuryBond(ticker)
+        elif quote_type == QuoteType.MUTUALFUND:
+            security = MutualFund(ticker)
+        else:
+            security = Misc(ticker)
+        
+       
+        self.__portfolio_objs[ticker] = security
+        
+
+    
+
+    def remove_from_portfolio(self, ticker: str):
+        &#34;&#34;&#34;
+        Removes given security from the Portfolio
+
+        Parameters
+        ----------
+        ticker: str
+            The security as ticker symbol
+        &#34;&#34;&#34;
+
+        if not isinstance(ticker, str):
+            raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+
+        if ticker not in self.__portfolio:
+            raise InputError(&#34;Ticker Symbol not in Portfolio&#34;, &#34;Input Ticker &#34; + ticker)
+
+        else:
+            del self.__portfolio[ticker]
+            del self.__portfolio_objs[ticker]
+            del self.__portfolio_bp[ticker]
+
+
+    def update_qty(self, ticker: str, new_qty: Decimal):
+        &#34;&#34;&#34;
+        Updates qty owned for a given security
+
+        Parameters
+        ----------
+        ticker: str
+            The security as ticker symbol
+        new_qty: Decimal
+            new qty which is owned in this Portfolio
+        &#34;&#34;&#34;
+
+        if not isinstance(ticker, str):
+            raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+
+        if not isinstance(new_qty, Decimal):
+            raise ParsingError(&#34;Invalid qty type&#34;,&#34;expected type &#39;Decimal&#39;&#34;)
+        
+        if ticker not in self.__portfolio:
+            raise InputError(&#34;Ticker Symbol not in Portfolio&#34;, &#34;Input Ticker &#34; + ticker)
+
+        if (Decimal(0) &gt; new_qty):
+                raise InputError(&#34;Invalid qty&#34;, &#34;Needs to be &gt;= 0&#34;)
+        
+        else:
+            self.__portfolio[ticker] = new_qty
+
+
+    def update_buying_price(self, ticker: str, buying_price: Decimal):
+        &#34;&#34;&#34;
+        Updates buying price at which a given security was bought
+
+        Parameters
+        ----------
+        ticker: str
+            The security as ticker symbol
+        buying_price: Decimal
+            new buying price
+        &#34;&#34;&#34;
+
+        if not isinstance(ticker, str):
+            raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+    
+        if ticker not in self.__portfolio:
+            raise InputError(&#34;Ticker Symbol not in Portfolio&#34;, &#34;Input Ticker &#34; + ticker)
+
+        if (Decimal(0) &gt; buying_price):
+                raise InputError(&#34;Invalid buying_price&#34;, &#34;Needs to be &gt;= 0&#34;)
+
+        self.__portfolio_bp[ticker] = buying_price
+        
+
+    def returns(self) -&gt; Decimal:
+        &#34;&#34;&#34;
+        Get the monetary returns on the Portfolio.
+        
+        Returns
+        -------
+        Decimal
+            the returns of the Portfolio, calculated as:
+            Current value of the portfolio - total buying price of the portfolio
+        &#34;&#34;&#34;
+        if not self.__portfolio:
+            return Decimal(0)
+        
+        val = self.value()
+
+        buy_price = sum(self.__portfolio_bp.values())
+
+        rets = val - buy_price
+
+        return rets
+
+    def value(self) -&gt; Decimal:
+        &#34;&#34;&#34;
+        Get the value of the Portfolio.
+        
+        Returns
+        -------
+        Decimal
+            the value of the Portfolio calculated as:
+            Today&#39;s price of the security * qty owned in Portfolio
+        &#34;&#34;&#34;
+        if not self.__portfolio:
+            return Decimal(0)
+
+        val = Decimal(0)
+
+        for t, o in self.__portfolio_objs.items():
+            val += (o.price * self.__portfolio[t])
+        
+        return val
+                
+
+    def get_portfolio_objects(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Get the information of the security object(s) which Portfolio contains.
+        
+        Returns
+        -------
+        dict
+            key: Ticker, value: security object
+        &#34;&#34;&#34;
+        if not self.__portfolio_objs:
+            return dict()
+        
+        else:
+            return self.__portfolio_objs
+    
+    def get_portfolio_info(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Get the information on buying price and qty which Portfolio contains.
+        
+        Returns
+        -------
+        dict
+            key: Ticker, value: PortfolioInfo named tuple
+        &#34;&#34;&#34;
+        if not self.__portfolio_objs:
+            return dict()
+        
+        else:
+            ret_dict = dict()
+            for t, o in self.__portfolio.items():
+                ret_dict[t] = PortfolioInfo(qty=o, buying_price=self.__portfolio_bp[t])
+            
+            return ret_dict</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="yayFinPy.portfolio.Portfolio.add_to_portfolio"><code class="name flex">
+<span>def <span class="ident">add_to_portfolio</span></span>(<span>self, ticker: str, qty: decimal.Decimal, buying_price: decimal.Decimal = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds given security to the Portfolio with given qty owned</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>ticker</code></strong> :&ensp;<code>str</code></dt>
+<dd>The security as ticker symbol</dd>
+<dt><strong><code>qty</code></strong> :&ensp;<code>Decimal</code></dt>
+<dd>Amount of the security owned</dd>
+<dt><strong><code>buying_price</code></strong> :&ensp;<code>Decimal</code>, optional</dt>
+<dd>Not used mandatorily to initialise the security in a portfolio.
+May choose to mention now add later if needs to see returns</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_to_portfolio(self, ticker: str, qty: Decimal, 
+    buying_price: Decimal = None):
+    &#34;&#34;&#34;
+    Adds given security to the Portfolio with given qty owned
+
+    Parameters
+    ----------
+    ticker: str
+        The security as ticker symbol
+    qty: Decimal
+        Amount of the security owned
+    buying_price: Decimal, optional
+        Not used mandatorily to initialise the security in a portfolio.
+        May choose to mention now add later if needs to see returns
+    &#34;&#34;&#34;
+    if not isinstance(ticker, str):
+        raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+
+    if ticker in self.__portfolio:
+        raise InputError(&#34;Ticker exists&#34;, &#34;Input Ticker &#34; + ticker)
+    
+    if not isinstance(qty, Decimal):
+        raise ParsingError(&#34;Invalid qty type&#34;,&#34;expected type &#39;Decimal&#39;&#34;)
+
+    security = yf.Ticker(ticker)
+
+    if &#39;quoteType&#39; in security.info:
+        if security.info[&#39;quoteType&#39;] in QuoteType._value2member_map_:
+            quote_type = QuoteType(security.info[&#39;quoteType&#39;])
+        else:
+            quote_type = QuoteType.MISC
+    else:
+        raise InputError(&#34;Invalid Ticker Symbol&#34;, &#34;Input Ticker &#34; + ticker)
+
+    if qty &lt; Decimal(0):
+        raise InputError(&#34;Invalid qty&#34;, &#34;Input Ticker &#34; + ticker)
+
+    if buying_price is not None:
+        if not isinstance(buying_price, Decimal):
+            raise ParsingError(&#34;Invalid buying_price type&#34;,&#34;expected type &#39;Decimal&#39;&#34;)
+
+        if buying_price &lt; Decimal(0):
+             raise InputError(&#34;Invalid buying price&#34;, &#34;Input Ticker &#34; + ticker)
+        
+    
+    self.__portfolio_bp[ticker] = buying_price 
+    self.__portfolio[ticker] = qty
+
+    if quote_type == QuoteType.EQUITY:
+        security = Stock(ticker)
+    elif quote_type == QuoteType.ETF:
+        security = ETF(ticker)
+    elif (quote_type == QuoteType.CRYPTOCURRENCY or quote_type == QuoteType.CURRENCY):
+        security = Currency(ticker)
+    elif quote_type == QuoteType.INDEX:
+        security = TreasuryBond(ticker)
+    elif quote_type == QuoteType.MUTUALFUND:
+        security = MutualFund(ticker)
+    else:
+        security = Misc(ticker)
+    
+   
+    self.__portfolio_objs[ticker] = security</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.portfolio.Portfolio.as_dataframe"><code class="name flex">
+<span>def <span class="ident">as_dataframe</span></span>(<span>self) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame</code></dt>
+<dd>pandas dataframe with portfolio info as table
+Serves to print well as well as be used as data-structure to extract
+values.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def as_dataframe(self) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Returns
+    -------
+    pandas.DataFrame
+        pandas dataframe with portfolio info as table
+        Serves to print well as well as be used as data-structure to extract
+        values.
+    &#34;&#34;&#34;
+
+    df_dict = OrderedDict()
+    df_dict[&#34;Ticker Symbol&#34;] = []
+    df_dict[&#34;Security Type&#34;] = []
+    df_dict[&#34;Buying Price&#34;] = []
+    df_dict[&#34;Quantity&#34;] = []
+    df_dict[&#34;Value&#34;] = []
+
+    for t, val in self.__portfolio_objs.items():
+        df_dict[&#34;Ticker Symbol&#34;].append(t)
+        df_dict[&#34;Security Type&#34;].append(val.quote_type.value)
+        if self.__portfolio_bp[t] is None:
+            df_dict[&#34;Buying Price&#34;].append(nan)
+        else:
+            df_dict[&#34;Buying Price&#34;].append(self.__portfolio_bp[t])
+        df_dict[&#34;Quantity&#34;].append(self.__portfolio[t])
+        df_dict[&#34;Value&#34;].append(val.price * self.__portfolio[t])
+    
+    df = pd.DataFrame(df_dict)
+    return df</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.portfolio.Portfolio.diversification"><code class="name flex">
+<span>def <span class="ident">diversification</span></span>(<span>self) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame</code></dt>
+<dd>Shows how diverse the portfolio is based on the data.
+Calculates the percentage per security group as per its current value wrt the entire portfolio.
+Serves to show well as well as be used as data-structure to use
+values.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def diversification(self) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Returns
+    -------
+    pandas.DataFrame
+        Shows how diverse the portfolio is based on the data.
+        Calculates the percentage per security group as per its current value wrt the entire portfolio.
+        Serves to show well as well as be used as data-structure to use
+        values.
+    &#34;&#34;&#34;
+    df_dict = OrderedDict()
+    df_dict[&#34;Security Type&#34;] = []
+    df_dict[&#34;Current Value&#34;] = []
+    for t, val in self.__portfolio_objs.items():
+        df_dict[&#34;Security Type&#34;].append(val.quote_type.value)
+        df_dict[&#34;Current Value&#34;].append(val.price * self.__portfolio[t])
+    
+    df = pd.DataFrame(df_dict)
+    df_sum = df.groupby([&#34;Security Type&#34;]).agg({&#39;Current Value&#39;: &#39;sum&#39;})
+
+    df_sum[&#34;Percentage&#34;] = 100 * df_sum[&#34;Current Value&#34;] / df_sum[&#34;Current Value&#34;].sum()
+    return df_sum</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.portfolio.Portfolio.get_portfolio_info"><code class="name flex">
+<span>def <span class="ident">get_portfolio_info</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the information on buying price and qty which Portfolio contains.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>key: Ticker, value: PortfolioInfo named tuple</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_portfolio_info(self) -&gt; dict:
+    &#34;&#34;&#34;
+    Get the information on buying price and qty which Portfolio contains.
+    
+    Returns
+    -------
+    dict
+        key: Ticker, value: PortfolioInfo named tuple
+    &#34;&#34;&#34;
+    if not self.__portfolio_objs:
+        return dict()
+    
+    else:
+        ret_dict = dict()
+        for t, o in self.__portfolio.items():
+            ret_dict[t] = PortfolioInfo(qty=o, buying_price=self.__portfolio_bp[t])
+        
+        return ret_dict</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.portfolio.Portfolio.get_portfolio_objects"><code class="name flex">
+<span>def <span class="ident">get_portfolio_objects</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the information of the security object(s) which Portfolio contains.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>key: Ticker, value: security object</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_portfolio_objects(self) -&gt; dict:
+    &#34;&#34;&#34;
+    Get the information of the security object(s) which Portfolio contains.
+    
+    Returns
+    -------
+    dict
+        key: Ticker, value: security object
+    &#34;&#34;&#34;
+    if not self.__portfolio_objs:
+        return dict()
+    
+    else:
+        return self.__portfolio_objs</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.portfolio.Portfolio.remove_from_portfolio"><code class="name flex">
+<span>def <span class="ident">remove_from_portfolio</span></span>(<span>self, ticker: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Removes given security from the Portfolio</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>ticker</code></strong> :&ensp;<code>str</code></dt>
+<dd>The security as ticker symbol</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_from_portfolio(self, ticker: str):
+    &#34;&#34;&#34;
+    Removes given security from the Portfolio
+
+    Parameters
+    ----------
+    ticker: str
+        The security as ticker symbol
+    &#34;&#34;&#34;
+
+    if not isinstance(ticker, str):
+        raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+
+    if ticker not in self.__portfolio:
+        raise InputError(&#34;Ticker Symbol not in Portfolio&#34;, &#34;Input Ticker &#34; + ticker)
+
+    else:
+        del self.__portfolio[ticker]
+        del self.__portfolio_objs[ticker]
+        del self.__portfolio_bp[ticker]</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.portfolio.Portfolio.returns"><code class="name flex">
+<span>def <span class="ident">returns</span></span>(<span>self) ‑> decimal.Decimal</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the monetary returns on the Portfolio.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>the returns of the Portfolio, calculated as:
+Current value of the portfolio - total buying price of the portfolio</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def returns(self) -&gt; Decimal:
+    &#34;&#34;&#34;
+    Get the monetary returns on the Portfolio.
+    
+    Returns
+    -------
+    Decimal
+        the returns of the Portfolio, calculated as:
+        Current value of the portfolio - total buying price of the portfolio
+    &#34;&#34;&#34;
+    if not self.__portfolio:
+        return Decimal(0)
+    
+    val = self.value()
+
+    buy_price = sum(self.__portfolio_bp.values())
+
+    rets = val - buy_price
+
+    return rets</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.portfolio.Portfolio.update_buying_price"><code class="name flex">
+<span>def <span class="ident">update_buying_price</span></span>(<span>self, ticker: str, buying_price: decimal.Decimal)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates buying price at which a given security was bought</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>ticker</code></strong> :&ensp;<code>str</code></dt>
+<dd>The security as ticker symbol</dd>
+<dt><strong><code>buying_price</code></strong> :&ensp;<code>Decimal</code></dt>
+<dd>new buying price</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_buying_price(self, ticker: str, buying_price: Decimal):
+    &#34;&#34;&#34;
+    Updates buying price at which a given security was bought
+
+    Parameters
+    ----------
+    ticker: str
+        The security as ticker symbol
+    buying_price: Decimal
+        new buying price
+    &#34;&#34;&#34;
+
+    if not isinstance(ticker, str):
+        raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+
+    if ticker not in self.__portfolio:
+        raise InputError(&#34;Ticker Symbol not in Portfolio&#34;, &#34;Input Ticker &#34; + ticker)
+
+    if (Decimal(0) &gt; buying_price):
+            raise InputError(&#34;Invalid buying_price&#34;, &#34;Needs to be &gt;= 0&#34;)
+
+    self.__portfolio_bp[ticker] = buying_price</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.portfolio.Portfolio.update_qty"><code class="name flex">
+<span>def <span class="ident">update_qty</span></span>(<span>self, ticker: str, new_qty: decimal.Decimal)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates qty owned for a given security</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>ticker</code></strong> :&ensp;<code>str</code></dt>
+<dd>The security as ticker symbol</dd>
+<dt><strong><code>new_qty</code></strong> :&ensp;<code>Decimal</code></dt>
+<dd>new qty which is owned in this Portfolio</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_qty(self, ticker: str, new_qty: Decimal):
+    &#34;&#34;&#34;
+    Updates qty owned for a given security
+
+    Parameters
+    ----------
+    ticker: str
+        The security as ticker symbol
+    new_qty: Decimal
+        new qty which is owned in this Portfolio
+    &#34;&#34;&#34;
+
+    if not isinstance(ticker, str):
+        raise ParsingError(&#34;Invalid Ticker type&#34;,&#34;expected type &#39;str&#39;&#34;)
+
+    if not isinstance(new_qty, Decimal):
+        raise ParsingError(&#34;Invalid qty type&#34;,&#34;expected type &#39;Decimal&#39;&#34;)
+    
+    if ticker not in self.__portfolio:
+        raise InputError(&#34;Ticker Symbol not in Portfolio&#34;, &#34;Input Ticker &#34; + ticker)
+
+    if (Decimal(0) &gt; new_qty):
+            raise InputError(&#34;Invalid qty&#34;, &#34;Needs to be &gt;= 0&#34;)
+    
+    else:
+        self.__portfolio[ticker] = new_qty</code></pre>
+</details>
+</dd>
+<dt id="yayFinPy.portfolio.Portfolio.value"><code class="name flex">
+<span>def <span class="ident">value</span></span>(<span>self) ‑> decimal.Decimal</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the value of the Portfolio.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Decimal</code></dt>
+<dd>the value of the Portfolio calculated as:
+Today's price of the security * qty owned in Portfolio</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def value(self) -&gt; Decimal:
+    &#34;&#34;&#34;
+    Get the value of the Portfolio.
+    
+    Returns
+    -------
+    Decimal
+        the value of the Portfolio calculated as:
+        Today&#39;s price of the security * qty owned in Portfolio
+    &#34;&#34;&#34;
+    if not self.__portfolio:
+        return Decimal(0)
+
+    val = Decimal(0)
+
+    for t, o in self.__portfolio_objs.items():
+        val += (o.price * self.__portfolio[t])
+    
+    return val</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="yayFinPy.portfolio.PortfolioInfo"><code class="flex name class">
+<span>class <span class="ident">PortfolioInfo</span></span>
+<span>(</span><span>qty, buying_price)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Named Tuple PortfolioInfo
+qty -&gt; Quantity of the Security in portfolio
+buying_price -&gt; buying price of the security in portfolio</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.tuple</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="yayFinPy.portfolio.PortfolioInfo.buying_price"><code class="name">var <span class="ident">buying_price</span></code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 1</p></div>
+</dd>
+<dt id="yayFinPy.portfolio.PortfolioInfo.qty"><code class="name">var <span class="ident">qty</span></code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 0</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="yayFinPy" href="index.html">yayFinPy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="yayFinPy.portfolio.Portfolio" href="#yayFinPy.portfolio.Portfolio">Portfolio</a></code></h4>
+<ul class="">
+<li><code><a title="yayFinPy.portfolio.Portfolio.add_to_portfolio" href="#yayFinPy.portfolio.Portfolio.add_to_portfolio">add_to_portfolio</a></code></li>
+<li><code><a title="yayFinPy.portfolio.Portfolio.as_dataframe" href="#yayFinPy.portfolio.Portfolio.as_dataframe">as_dataframe</a></code></li>
+<li><code><a title="yayFinPy.portfolio.Portfolio.diversification" href="#yayFinPy.portfolio.Portfolio.diversification">diversification</a></code></li>
+<li><code><a title="yayFinPy.portfolio.Portfolio.get_portfolio_info" href="#yayFinPy.portfolio.Portfolio.get_portfolio_info">get_portfolio_info</a></code></li>
+<li><code><a title="yayFinPy.portfolio.Portfolio.get_portfolio_objects" href="#yayFinPy.portfolio.Portfolio.get_portfolio_objects">get_portfolio_objects</a></code></li>
+<li><code><a title="yayFinPy.portfolio.Portfolio.remove_from_portfolio" href="#yayFinPy.portfolio.Portfolio.remove_from_portfolio">remove_from_portfolio</a></code></li>
+<li><code><a title="yayFinPy.portfolio.Portfolio.returns" href="#yayFinPy.portfolio.Portfolio.returns">returns</a></code></li>
+<li><code><a title="yayFinPy.portfolio.Portfolio.update_buying_price" href="#yayFinPy.portfolio.Portfolio.update_buying_price">update_buying_price</a></code></li>
+<li><code><a title="yayFinPy.portfolio.Portfolio.update_qty" href="#yayFinPy.portfolio.Portfolio.update_qty">update_qty</a></code></li>
+<li><code><a title="yayFinPy.portfolio.Portfolio.value" href="#yayFinPy.portfolio.Portfolio.value">value</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="yayFinPy.portfolio.PortfolioInfo" href="#yayFinPy.portfolio.PortfolioInfo">PortfolioInfo</a></code></h4>
+<ul class="">
+<li><code><a title="yayFinPy.portfolio.PortfolioInfo.buying_price" href="#yayFinPy.portfolio.PortfolioInfo.buying_price">buying_price</a></code></li>
+<li><code><a title="yayFinPy.portfolio.PortfolioInfo.qty" href="#yayFinPy.portfolio.PortfolioInfo.qty">qty</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
